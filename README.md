@@ -59,7 +59,7 @@ The templates cover a wide range of applications including:
 ```
 .
 ├── registry.json          # Main registry file consumed by Arcane
-├── templates/            # Individual template directories
+├── templates/            # Individual template directories (475 templates)
 │   ├── baserow/
 │   │   ├── compose.yml
 │   │   ├── .env.example
@@ -69,7 +69,13 @@ The templates cover a wide range of applications including:
 │   │   ├── .env.example
 │   │   └── README.md
 │   └── ...
-└── convert.js            # Conversion script (for reference)
+├── scripts/              # Conversion and enhancement scripts
+│   ├── README.md         # Script documentation
+│   ├── convert.js        # Portainer to Arcane converter
+│   ├── merge-registries.js
+│   ├── fix-incomplete.js
+│   └── add-tags.js
+└── LICENSE               # MIT License
 ```
 
 ## Contributing
@@ -82,15 +88,38 @@ If you find issues with any template or want to add new ones:
 
 ## Conversion Notes
 
-These templates were automatically converted from [Lissy93/portainer-templates](https://github.com/Lissy93/portainer-templates) Portainer format. Some manual adjustments may be needed for:
+These templates were automatically converted from [Lissy93/portainer-templates](https://github.com/Lissy93/portainer-templates) Portainer format using automated scripts in the `scripts/` directory.
 
+### Conversion Process
+1. **merge-registries.js** - Merged 4 separate Portainer registries (819 templates → 549 unique)
+2. **convert.js** - Converted Portainer format to Arcane format with compose.yml, .env.example, and README.md
+3. **fix-incomplete.js** - Fetched 152 working compose files from GitHub repositories
+4. **add-tags.js** - Enhanced templates with 639 additional tags using keyword analysis
+
+### Result
+- **475 working templates** with complete Docker Compose files
+- **6 incomplete templates** (moved to `templates-incomplete/`)
+- **Average 3.67 tags per template** for better discoverability
+
+### Notes
+Some manual adjustments may be needed for:
 - Volume paths (currently set to `/opt/mediadepot/apps/` from the original templates)
 - Network configurations
 - Template-specific customizations
 
+See `scripts/README.md` for detailed documentation on the conversion process.
+
 ## License
 
-Individual templates retain their original licenses. Please check each template's documentation for specific licensing information.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+**What this means:**
+- ✅ Free to use, modify, and distribute
+- ✅ Can be used commercially
+- ✅ No warranty or liability
+- ℹ️ Individual templates retain their original licenses
+
+Please check each template's documentation for specific licensing information about the underlying applications.
 
 ## Credits
 
