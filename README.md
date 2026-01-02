@@ -16,7 +16,7 @@ To use this registry with Arcane:
 
 1. Add the registry URL to your Arcane instance:
    ```
-   https://raw.githubusercontent.com/yourusername/arcane-templates/main/registry.json
+   https://raw.githubusercontent.com/sly67/arcane-templates/main/registry.json
    ```
 
 2. Browse and deploy templates directly from the Arcane interface
