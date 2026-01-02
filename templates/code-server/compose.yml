@@ -8,14 +8,11 @@ services:
     ports:
       - "8443:8443/tcp"
     volumes:
-      - /portainer/Files/AppData/Config/code-server:/config
+      - /portainer/Files/AppData/Config/Code-Server:/config
     environment:
       PUID: 1000
-      PGID: 1000
-      TZ: Europe/Amsterdam
-      PASSWORD: password
-      HASHED_PASSWORD: ${HASHED_PASSWORD}
-      SUDO_PASSWORD: password
-      SUDO_PASSWORD_HASH: ${SUDO_PASSWORD_HASH}
-      PROXY_DOMAIN: code-server.my.domain
-      DEFAULT_WORKSPACE: /config/workspace
+      GUID: 1000
+      TZ: ${TZ}
+      PASSWORD: ${PASSWORD}
+      SUDO_PASSWORD: ${SUDO_PASSWORD}
+      PROXY_DOMAIN: example.my.domain

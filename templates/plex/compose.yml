@@ -6,10 +6,16 @@ services:
     container_name: plex
     restart: unless-stopped
     volumes:
-      - /portainer/Files/AppData/Config/Plex:/config
-      - /portainer/TV:/tv
-      - /portainer/Movies:/movies
+      - /opt/mediadepot/apps/plex:/config
+      - /media/storage/tvshows:/data/tvshows
+      - /media/storage/movies:/data/movies
+      - /media/storage/music:/data/music
+      - undefined:/transcode
     environment:
-      PUID: 1000
-      PGID: 100
-      VERSION: ${VERSION}
+      PGID: 15000
+      PUID: 15000
+      TZ: America/Los_Angeles
+      VERSION: latest
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.plex.loadbalancer.server.port: "32400"

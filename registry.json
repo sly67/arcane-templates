@@ -4,7 +4,7 @@
   "description": "Docker Compose Templates converted from Portainer templates",
   "author": "Converted",
   "url": "https://github.com/sly67/arcane-templates",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "templates": [
     {
       "id": "baserow",
@@ -1651,19 +1651,6 @@
       ]
     },
     {
-      "id": "plex",
-      "name": "Plex",
-      "description": "Your favorite movies, TV, music, web shows, podcasts, and more, all streamed to your favorite screens.",
-      "version": "1.0.0",
-      "author": "Converted from Portainer",
-      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/plex/compose.yml",
-      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/plex/.env.example",
-      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/plex",
-      "tags": [
-        "mediaserver"
-      ]
-    },
-    {
       "id": "protonmail-bridge",
       "name": "ProtonMail Bridge",
       "description": "This is an unofficial Docker container of the ProtonMail Bridge. Some of the scripts are based on Hendrik Meyer's work.",
@@ -2401,20 +2388,6 @@
       ]
     },
     {
-      "id": "organizr-v2",
-      "name": "Organizr v2",
-      "description": "Organizr allows you to setup Tabs that will be loaded all in one webpage. You can then work on your server with ease.",
-      "version": "1.0.0",
-      "author": "Converted from Portainer",
-      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/organizr-v2/compose.yml",
-      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/organizr-v2/.env.example",
-      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/organizr-v2",
-      "tags": [
-        "other",
-        "tools"
-      ]
-    },
-    {
       "id": "oscam",
       "name": "OScam",
       "description": "OScam is a softcam, software to be used to decrypt digital television channels on a settopbox (receiver), as an alternative for a conditional access module\n  (CAM). OScam is, compared with other softcams (CCcam, mgcamd, etc.), open source. Hence, the name Open Source Conditional Access Module (OScam). OScam is based on the\n  not so well known softcam MpCS. The main features of OSCam are next to its softcam capabilities, that it is able to function as a cardserver.",
@@ -2799,20 +2772,6 @@
       "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/filebrowser-latest/compose.yml",
       "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/filebrowser-latest/.env.example",
       "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/filebrowser-latest",
-      "tags": [
-        "other",
-        "tools"
-      ]
-    },
-    {
-      "id": "filebrowser",
-      "name": "FileBrowser S6",
-      "description": "[arm][s6-version] Web File Browser which can be used as a middleware or standalone app.",
-      "version": "1.0.0",
-      "author": "Converted from Portainer",
-      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/filebrowser/compose.yml",
-      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/filebrowser/.env.example",
-      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/filebrowser",
       "tags": [
         "other",
         "tools"
@@ -3544,21 +3503,6 @@
       "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/transmission-openvpn-latest/compose.yml",
       "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/transmission-openvpn-latest/.env.example",
       "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/transmission-openvpn-latest",
-      "tags": [
-        "other",
-        "vpn",
-        "tools"
-      ]
-    },
-    {
-      "id": "transmission-openvpn",
-      "name": "Transmission OpenVPN v3",
-      "description": "This container contains OpenVPN and Transmission with a configuration\nwhere Transmission is running only when OpenVPN has an active tunnel.\nIt bundles configuration files for many popular VPN providers to make the setup easier.",
-      "version": "1.0.0",
-      "author": "Converted from Portainer",
-      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/transmission-openvpn/compose.yml",
-      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/transmission-openvpn/.env.example",
-      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/transmission-openvpn",
       "tags": [
         "other",
         "vpn",
@@ -5096,20 +5040,6 @@
       ]
     },
     {
-      "id": "immich",
-      "name": "Immich {shmolf}",
-      "description": "Self-hosted backup solution for photos and videos on mobile device.",
-      "version": "1.0.0",
-      "author": "Converted from Portainer",
-      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/immich/compose.yml",
-      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/immich/.env.example",
-      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/immich",
-      "tags": [
-        "photos",
-        "backup"
-      ]
-    },
-    {
       "id": "penpot-http",
       "name": "Penpot (http) {shmolf}",
       "description": "Penpot is the first Open Source design and prototyping platform meant for cross-domain teams.",
@@ -5120,33 +5050,6 @@
       "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/penpot-http",
       "tags": [
         "graphicdesign"
-      ]
-    },
-    {
-      "id": "watchtower",
-      "name": "Watchtower {shmolf}",
-      "description": "A container-based solution for automating Docker container base image updates",
-      "version": "1.0.0",
-      "author": "Converted from Portainer",
-      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/watchtower/compose.yml",
-      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/watchtower/.env.example",
-      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/watchtower",
-      "tags": [
-        "docker"
-      ]
-    },
-    {
-      "id": "stirling-pdf",
-      "name": "Stirling PDF {shmolf}",
-      "description": "Your locally hosted one-stop-shop for all your PDF needs.",
-      "version": "1.0.0",
-      "author": "Converted from Portainer",
-      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/stirling-pdf/compose.yml",
-      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/stirling-pdf/.env.example",
-      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/stirling-pdf",
-      "tags": [
-        "tools",
-        "pdf"
       ]
     },
     {
@@ -5186,19 +5089,6 @@
       "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/asciinema",
       "tags": [
         "tools"
-      ]
-    },
-    {
-      "id": "code-server",
-      "name": "Code-server {shmolf}",
-      "description": "Code-server (https://coder.com) is VS Code running on a remote server, accessible through the browser. - Code on your Chromebook, tablet, and laptop with a consistent dev environment. - If you have a Windows or Mac workstation, more easily develop for Linux. - Take advantage of large cloud servers to speed up tests, compilations, downloads, and more. - Preserve battery life when you're on the go. - All intensive computation runs on your server. - You're no longer running excess instances of Chrome.",
-      "version": "1.0.0",
-      "author": "Converted from Portainer",
-      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/code-server/compose.yml",
-      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/code-server/.env.example",
-      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/code-server",
-      "tags": [
-        "development"
       ]
     },
     {
@@ -6268,6 +6158,65 @@
       "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/zotero/.env.example",
       "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/zotero",
       "tags": []
+    },
+    {
+      "id": "calibre-web",
+      "name": "Calibre Web",
+      "description": "Calibre Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.",
+      "version": "1.0.0",
+      "author": "Converted from Portainer",
+      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/calibre-web/compose.yml",
+      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/calibre-web/.env.example",
+      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/calibre-web",
+      "tags": [
+        "cloud",
+        "books"
+      ]
+    },
+    {
+      "id": "resilio-sync",
+      "name": "Resilio Sync",
+      "description": "Resilio Sync (formerly BitTorrent Sync) uses the BitTorrent protocol to sync files and folders between all of your devices. There are both free and paid versions, this container supports both.",
+      "version": "1.0.0",
+      "author": "Converted from Portainer",
+      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/resilio-sync/compose.yml",
+      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/resilio-sync/.env.example",
+      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/resilio-sync",
+      "tags": [
+        "backup",
+        "cloud",
+        "other",
+        "tools"
+      ]
+    },
+    {
+      "id": "gophish",
+      "name": "GOPHISH",
+      "description": "NOTE: Once you deploy your GoPhish instance, please navigate to the logs section in Portainer and acquire your 'admin' credentials for login. Gophish is an open-source phishing toolkit designed for businesses and penetration testers. It provides the ability to quickly and easily setup and execute phishing engagements and security awareness training.",
+      "version": "1.0.0",
+      "author": "Converted from Portainer",
+      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/gophish/compose.yml",
+      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/gophish/.env.example",
+      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/gophish",
+      "tags": [
+        "other",
+        "tools"
+      ]
+    },
+    {
+      "id": "peppermint",
+      "name": "Peppermint",
+      "description": "Peppermint is a free and open source tickeg management solution with a range of features",
+      "version": "1.0.0",
+      "author": "Converted from Portainer",
+      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/peppermint/compose.yml",
+      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/peppermint/.env.example",
+      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/peppermint",
+      "tags": [
+        "other",
+        "tools",
+        "management"
+      ]
     }
   ]
 }

@@ -1,20 +1,16 @@
-# Watchtower {shmolf}
+# Watchtower
 
-A container-based solution for automating Docker container base image updates
+Automatically update running Docker containers
 
-![Logo](https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/watchtower-logo.png)
+![Logo](https://mediadepot.github.io/templates/img/watchtower-logo.png)
 
 ## Docker Image
 
-`containrrr/watchtower`
+`containrrr/watchtower:latest`
 
 ## Categories
 
-- Docker
-
-## Ports
-
-- 9001/tcp
+- Tools
 
 ## Volumes
 
@@ -22,5 +18,5 @@ A container-based solution for automating Docker container base image updates
 
 ## Maintainer
 
- https://github.com/shmolf/portainer-templates/
+ https://github.com/mediadepot/templates/
 

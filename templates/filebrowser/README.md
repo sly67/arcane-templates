@@ -1,34 +1,42 @@
-# FileBrowser S6
+# Filebrowser
 
-[arm][s6-version] Web File Browser which can be used as a middleware or standalone app.
+filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files.
 
-![Logo](https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/filebrowser.png)
+![Logo](https://mediadepot.github.io/templates/img/filebrowser-icon.png)
 
 ## Docker Image
 
-`filebrowser/filebrowser:s6`
+`mediadepot/filebrowser:latest`
 
 ## Categories
 
-- Other
 - Tools
+- Networkweb
+- Networkother
 
 ## Ports
 
-- 8082:80/tcp
+- 8080/tcp
 
 ## Environment Variables
 
-- `PUID` - PUID (default: `1000`)
-- `PGID` - PGID (default: `1000`)
+- `TZ` - TZ (default: `America/Los_Angeles`)
 
 ## Volumes
 
-- `/portainer/Downloads` → `/srv`
-- `/portainer/Files/AppData/Config/filebrowser/filebrowser.db` → `/database/filebrowser.db`
-- `/portainer/Files/AppData/Config/filebrowser/settings.json` → `/config/settings.json`
+- `/media/storage/tvshows` → `/srv/tvshows`
+- `/media/storage/movies` → `/srv/movies`
+- `/media/storage/music` → `/srv/music`
+- `/media/storage/photos` → `/srv/photos`
+- `/media/storage/ebooks` → `/srv/ebooks`
+- `/media/storage/documents` → `/srv/documents`
+- `/media/storage/software` → `/srv/software`
+- `/media/storage/downloads` → `/srv/downloads`
+- `/media/temp/blackhole` → `/srv/blackhole`
+- `/media/temp/processing` → `/srv/processing`
+- `/opt/mediadepot/apps/filebrowser` → `/config`
 
 ## Maintainer
 
- https://github.com/novaspirit/pi-hosted/
+ https://github.com/mediadepot/templates/
 

@@ -1,24 +1,25 @@
-# Manubes Edge Node
+# Sematext Docker Agent
 
-High-performance cloud platform for industrial production management. Manubes is a no-code solution that is used to structure, monitor and control production data, systems and processes in the cloud.
+Collect logs, metrics and docker events
 
-![Logo](https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/inray-manubes.png)
+![Logo](https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/sematext_agent.png)
 
 ## Source Repository
 
-- Repository: https://github.com/portainer/templates
-- Stack File: edge/inray-manubes-edge-node/docker-compose.yml
+- Repository: https://github.com/deviantony/templates
+- Stack File: stacks/sematext-agent-docker/docker-stack.yml
 
 ## Categories
 
-- Edge
+- Log Management
+- Monitoring
 
 ## Environment Variables
 
-- `MANUBES_SECRET` - manubes secret
-- `ACCEPT_EULA` - Accept EULA
+- `LOGSENE_TOKEN` - Logs token
+- `SPM_TOKEN` - SPM monitoring token
 
-## Maintainer
+## Volumes
 
- https://github.com/portainer/templates/
+- `/var/run/docker.sock` → `/var/run/docker.sock`
 

@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   organizr-v2:
-    image: organizrtools/organizr-v2:php-fpm
+    image: organizr/organizr:latest
     container_name: organizr-v2
     restart: unless-stopped
     ports:

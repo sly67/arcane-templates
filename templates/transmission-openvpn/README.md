@@ -1,20 +1,16 @@
-# Transmission OpenVPN v3
+# Transmission-OpenVPN
 
-This container contains OpenVPN and Transmission with a configuration
-where Transmission is running only when OpenVPN has an active tunnel.
-It bundles configuration files for many popular VPN providers to make the setup easier.
+This container contains OpenVPN and Transmission with a configuration where Transmission is running only when OpenVPN has an active tunnel. It bundles configuration files for many popular VPN providers to make the setup easier.
 
-![Logo](https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/transmission-icon.png)
+![Logo](https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/transmission-icon.png)
 
 ## Docker Image
 
-`haugene/transmission-openvpn:3.7.1`
+`haugene/transmission-openvpn:latest`
 
 ## Categories
 
-- Other
-- Vpn
-- Tools
+- Torrentserver
 
 ## Ports
 
@@ -23,21 +19,18 @@ It bundles configuration files for many popular VPN providers to make the setup 
 ## Environment Variables
 
 - `PUID` - PUID (default: `1000`)
-- `PGID` - PGID (default: `1000`)
+- `PGID` - PGID (default: `100`)
 - `OPENVPN_PROVIDER` - OPENVPN_PROVIDER (default: `MULLVAD`)
-- `OPENVPN_CONFIG` - OPENVPN_CONFIG
 - `OPENVPN_USERNAME` - OPENVPN_USERNAME
 - `OPENVPN_PASSWORD` - OPENVPN_PASSWORD
 - `LOCAL_NETWORK` - LOCAL_NETWORK (default: `192.168.0.0/24`)
-- `TRANSMISSION_WATCH_DIR_ENABLED` - watch-dir-enabled (default: `true`)
 
 ## Volumes
 
-- `/portainer/Files/AppData/Config/transmission-openvpn` → `/config`
 - `/portainer/Downloads` → `/data`
 - `/etc/localtime` → `/etc/localtime`
 
 ## Maintainer
 
- https://github.com/novaspirit/pi-hosted/
+ https://github.com/mycroftwilde/portainer_templates/
 

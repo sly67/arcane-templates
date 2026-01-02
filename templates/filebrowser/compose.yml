@@ -2,15 +2,27 @@ version: '3.8'
 
 services:
   filebrowser:
-    image: filebrowser/filebrowser:s6
+    image: mediadepot/filebrowser:latest
     container_name: filebrowser
     restart: unless-stopped
     ports:
-      - "8082:80/tcp"
+      - "8080/tcp"
     volumes:
-      - /portainer/Downloads:/srv
-      - /portainer/Files/AppData/Config/filebrowser/filebrowser.db:/database/filebrowser.db
-      - /portainer/Files/AppData/Config/filebrowser/settings.json:/config/settings.json
+      - /media/storage/tvshows:/srv/tvshows
+      - /media/storage/movies:/srv/movies
+      - /media/storage/music:/srv/music
+      - /media/storage/photos:/srv/photos
+      - /media/storage/ebooks:/srv/ebooks
+      - /media/storage/documents:/srv/documents
+      - /media/storage/software:/srv/software
+      - /media/storage/downloads:/srv/downloads
+      - /media/temp/blackhole:/srv/blackhole
+      - /media/temp/processing:/srv/processing
+      - /opt/mediadepot/apps/filebrowser:/config
     environment:
-      PUID: 1000
-      PGID: 1000
+      TZ: America/Los_Angeles
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.filebrowser.loadbalancer.server.port: "8080"
+      traefik.http.routers.filebrowser.entrypoints: "websecure"
+      traefik.http.routers.filebrowser.tls.certresolver: "mydnschallenge"

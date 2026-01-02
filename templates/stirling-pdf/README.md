@@ -1,34 +1,20 @@
-# Stirling PDF {shmolf}
+# Stirling-PDF
 
-Your locally hosted one-stop-shop for all your PDF needs.
+This is a powerful locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files, such as splitting merging, converting, reorganizing, adding images, rotating, compressing, and more.
 
-![Logo](https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/stirling-pdf.svg)
+![Logo](https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/main/docs/stirling.png)
 
-## Docker Image
+## Source Repository
 
-`frooodle/s-pdf:0.18.1`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/stirling-pdf.yml
 
 ## Categories
 
-- Tools
-- Pdf
-
-## Ports
-
-- 5417:8080/tcp
-
-## Environment Variables
-
-- `PUID` - PUID (default: `1000`)
-- `PGID` - PGID (default: `1000`)
-- `DOCKER_ENABLE_SECURITY` - Enable Login
-
-## Volumes
-
-- `/portainer/Files/AppData/Config/StirlingPDF` → `/configs`
-- `/portainer/Files/AppData/Libraries/StirlingPDF/tessdata` → `/usr/share/tesseract-ocr/5/tessdata`
+- Pdftools
+- Productivity
 
 ## Maintainer
 
- https://github.com/shmolf/portainer-templates/
+ https://github.com/xneo1/portainer_templates/
 

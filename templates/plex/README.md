@@ -1,8 +1,8 @@
-# Plex
+# Plex Media Server
 
-Your favorite movies, TV, music, web shows, podcasts, and more, all streamed to your favorite screens.
+Plex organizes your video, music, and photo collections and streams them to all of your screens.
 
-![Logo](https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/plex-icon.png)
+![Logo](https://mediadepot.github.io/templates/img/plex-icon.png)
 
 ## Docker Image
 
@@ -10,21 +10,26 @@ Your favorite movies, TV, music, web shows, podcasts, and more, all streamed to 
 
 ## Categories
 
-- Mediaserver
+- Mediaservervideo
+- Mediaservermusic
+- Mediaserverphotos
 
 ## Environment Variables
 
-- `PUID` - PUID (default: `1000`)
-- `PGID` - PGID (default: `100`)
-- `VERSION` - VERSION
+- `PGID` - PGID (default: `15000`)
+- `PUID` - PUID (default: `15000`)
+- `TZ` - TZ (default: `America/Los_Angeles`)
+- `VERSION` - VERSION (default: `latest`)
 
 ## Volumes
 
-- `/portainer/Files/AppData/Config/Plex` → `/config`
-- `/portainer/TV` → `/tv`
-- `/portainer/Movies` → `/movies`
+- `/opt/mediadepot/apps/plex` → `/config`
+- `/media/storage/tvshows` → `/data/tvshows`
+- `/media/storage/movies` → `/data/movies`
+- `/media/storage/music` → `/data/music`
+- `undefined` → `/transcode`
 
 ## Maintainer
 
- https://github.com/mycroftwilde/portainer_templates/
+ https://github.com/mediadepot/templates/
 

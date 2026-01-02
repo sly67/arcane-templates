@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  resilio-sync:
+    image: linuxserver/resilio-sync:latest
+    container_name: resilio-sync
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/Resilio-Sync:/config
+      - undefined:/sync
+      - /portainer/Downloads:/downloads
+    environment:
+      PUID: 1000
+      PGID: 100

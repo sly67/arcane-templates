@@ -1,17 +1,16 @@
-# Organizr v2
+# Organizr
 
 Organizr allows you to setup Tabs that will be loaded all in one webpage. You can then work on your server with ease.
 
-![Logo](https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/organizr-icon.png)
+![Logo](https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/organizr-icon.png)
 
 ## Docker Image
 
-`organizrtools/organizr-v2:php-fpm`
+`organizr/organizr:latest`
 
 ## Categories
 
-- Other
-- Tools
+- Dashboardserver
 
 ## Ports
 
@@ -28,5 +27,5 @@ Organizr allows you to setup Tabs that will be loaded all in one webpage. You ca
 
 ## Maintainer
 
- https://github.com/SelfhostedPro/selfhosted_templates/
+ https://github.com/mycroftwilde/portainer_templates/
 
