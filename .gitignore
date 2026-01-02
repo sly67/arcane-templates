@@ -11,3 +11,7 @@ incomplete-templates.json
 *.sh
 *.claude
 /tmp/
+merge-registries.js
+*.backup.json
+add-tags.js
+convert.js
