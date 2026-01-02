@@ -1,0 +1,19 @@
+# Fetchcord
+
+FetchCord grabs your OS info and displays it as Discord Rich Presence
+
+![Logo](https://camo.githubusercontent.com/508dbb305be551d7278b5b1decb1a68dbac2558c4a2053da1db44690660d0386/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3639353138323834393437363635373232332f3734323036343435323432313238383037372f46657463684469732e706e67)
+
+## Source Repository
+
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/fetchcord.yml
+
+## Categories
+
+- System
+
+## Maintainer
+
+ https://github.com/xneo1/portainer_templates/
+

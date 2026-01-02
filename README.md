@@ -1,6 +1,8 @@
 # Arcane Templates Registry
 
-This repository contains 551 Docker Compose templates converted from [Lissy93/portainer-templates](https://github.com/Lissy93/portainer-templates) for use with [Arcane](https://getarcane.app/).
+This repository contains 479 working Docker Compose templates converted from [Lissy93/portainer-templates](https://github.com/Lissy93/portainer-templates) for use with [Arcane](https://getarcane.app/).
+
+> **Note:** Out of 551 original templates, 479 are fully working with complete Docker Compose files. 5 templates with missing or inaccessible source files have been moved to `templates-incomplete/` for reference.
 
 ## Overview
 

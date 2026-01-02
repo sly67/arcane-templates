@@ -4,3 +4,8 @@ node_modules/
 .env
 portainer_registery.json
 arcane_registry.json
+fix-incomplete.js
+find-alternatives.js
+incomplete-templates.json
+fix-incomplete.log
+portainer_registery*.json
