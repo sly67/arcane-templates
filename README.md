@@ -1,5 +1,4 @@
-<!-- Banner placeholder - replace with your banner image -->
-![Banner](https://via.placeholder.com/1200x300/0066cc/ffffff?text=Arcane+Templates+Registry)
+![Arcane Banner](https://github.com/getarcaneapp/arcane/raw/main/.github/assets/img/PNG-3.png)
 
 # Arcane Templates Registry
 
