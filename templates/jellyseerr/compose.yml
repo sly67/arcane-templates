@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  Jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: Jellyseerr
+    restart: unless-stopped
+    ports:
+      - "5055:5055/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Jellyseerr:/app/config
+    environment:
+      PUID: 1000
+      PGID: 100

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Apprise-api:
+    image: linuxserver/apprise-api:latest
+    container_name: Apprise-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000/tcp"
+    volumes:
+      - /volume1/docker/apprise-api/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

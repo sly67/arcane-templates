@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  midarr:
+    image: undefined
+    container_name: midarr
+    restart: unless-stopped

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  Tester:
+    image: linuxserver/tester:latest
+    container_name: Tester
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+    environment:
+      URL: "http://google.com"

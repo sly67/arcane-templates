@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  Servas:
+    image: undefined
+    container_name: Servas
+    restart: unless-stopped
+    ports:
+      - "8456:80/tcp"

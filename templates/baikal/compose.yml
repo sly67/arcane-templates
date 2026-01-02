@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  baikal:
+    image: undefined
+    container_name: baikal
+    restart: unless-stopped

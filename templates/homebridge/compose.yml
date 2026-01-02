@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  homebridge:
+    image: homebridge/homebridge:latest
+    container_name: homebridge
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/homebridge:/homebridge
+    environment:
+      PGID: 1000
+      PUID: 1000
+      HOMEBRIDGE_CONFIG_UI: 1
+      HOMEBRIDGE_CONFIG_UI_PORT: 8581
+      TZ: America/New_York

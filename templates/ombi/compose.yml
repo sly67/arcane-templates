@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  ombi:
+    image: linuxserver/ombi:latest
+    container_name: ombi
+    restart: unless-stopped
+    ports:
+      - "3579/tcp"
+    volumes:
+      - /opt/mediadepot/apps/ombi:/config
+      - /etc/localtime:/etc/localtime
+    environment:
+      PGID: 15000
+      PUID: 15000
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.ombi.loadbalancer.server.port: "3579"
+      traefik.http.routers.ombi.entrypoints: "websecure"
+      traefik.http.routers.ombi.tls.certresolver: "mydnschallenge"

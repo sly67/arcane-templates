@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  broadlink-manager:
+    image: undefined
+    container_name: broadlink-manager
+    restart: unless-stopped

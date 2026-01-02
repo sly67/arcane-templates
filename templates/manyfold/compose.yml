@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  Manyfold:
+    image: linuxserver/manyfold:latest
+    container_name: Manyfold
+    restart: unless-stopped
+    ports:
+      - "3214:3214/tcp"
+    volumes:
+      - /volume1/docker/manyfold/config:/config
+      - /volume1/docker/manyfold/libraries:/libraries
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      DATABASE_URL: ${DATABASE_URL}
+      REDIS_URL: ${REDIS_URL}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}

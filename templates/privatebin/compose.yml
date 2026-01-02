@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  privatebin:
+    image: privatebin/nginx-fpm-alpine:latest
+    container_name: privatebin
+    restart: unless-stopped
+    ports:
+      - "8080:8080/tcp"
+    volumes:
+      - /portainer/Files/AppData/PrivateBin:/srv/data
+      - /portainer/Files/AppData/Config/PrivateBin:/srv/cfg
+    environment:
+      PUID: 1000
+      PGID: 1000

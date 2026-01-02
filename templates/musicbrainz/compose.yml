@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  musicbrainz:
+    image: linuxserver/musicbrainz:latest
+    container_name: musicbrainz
+    restart: unless-stopped
+    ports:
+      - "5000:5000/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/MusicBrainz:/config
+      - /portainer/Files/AppData/MusicBrainz:/data
+    environment:
+      BRAINZCODE: ${BRAINZCODE}
+      PUID: 1000
+      PGID: 100

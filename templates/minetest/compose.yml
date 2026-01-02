@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  minetest:
+    image: linuxserver/minetest:latest
+    container_name: minetest
+    restart: unless-stopped
+    ports:
+      - "30000:30000/udp"
+    volumes:
+      - undefined:/config/.minetest
+    environment:
+      PUID: 1000
+      PGID: 100

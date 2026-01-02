@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  pydio:
+    image: linuxserver/pydio:latest
+    container_name: pydio
+    restart: unless-stopped
+    ports:
+      - "443/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Pydio:/config
+      - /portainer/Files/AppData/Pydio:/data
+    environment:
+      PUID: 1000
+      PGID: 100

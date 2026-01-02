@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  deluge-openvpn:
+    image: sgtsquiggs/deluge-openvpn:latest
+    container_name: deluge-openvpn
+    restart: unless-stopped
+    ports:
+      - "8112:8112/tcp"
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /portainer/Downloads:/downloads
+      - /portainer/Files/AppData/Config/DelugeOpenVPN/config:/config
+    environment:
+      PUID: 1001
+      OPENVPN_PROVIDER: MULLVAD
+      OPENVPN_USERNAME: ${OPENVPN_USERNAME}
+      OPENVPN_PASSWORD: ${OPENVPN_PASSWORD}

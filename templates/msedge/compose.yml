@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Msedge:
+    image: linuxserver/msedge:latest
+    container_name: Msedge
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "3001:3001/tcp"
+    volumes:
+      - /volume1/docker/msedge/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      EDGE_CLI: "https://www.linuxserver.io/"

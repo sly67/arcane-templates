@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  UrBackup:
+    image: uroni/urbackup-server:latest
+    container_name: UrBackup
+    restart: unless-stopped
+    ports:
+      - "55415:55415/tcp"
+      - "55414:55414/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/urbackup:/var/urbackup
+      - /portainer/backups:/backup
+    environment:
+      PUID: 1000
+      PGID: 1000

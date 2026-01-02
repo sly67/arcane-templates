@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  htpcmanager:
+    image: linuxserver/htpcmanager:latest
+    container_name: htpcmanager
+    restart: unless-stopped
+    ports:
+      - "8085:8085/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/HTPCmanager:/config
+    environment:
+      PUID: 1000
+      PGID: 100

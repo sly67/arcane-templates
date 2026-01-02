@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  Meilisearch:
+    image: undefined
+    container_name: Meilisearch
+    restart: unless-stopped

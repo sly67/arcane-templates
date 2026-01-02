@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  jump:
+    image: undefined
+    container_name: jump
+    restart: unless-stopped

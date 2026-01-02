@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  Cloud9:
+    image: linuxserver/cloud9:latest
+    container_name: Cloud9
+    restart: unless-stopped
+    ports:
+      - "8000:8000/tcp"
+    volumes:
+      - /volume1/docker/cloud9/config:/config
+      - /volume1/docker/cloud9/code:/code
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      GITURL: "https://github.com/linuxserver/docker-cloud9.git"
+      USERNAME: ${USERNAME}
+      PASSWORD: ${PASSWORD}

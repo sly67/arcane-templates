@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  medusa:
+    image: linuxserver/medusa:latest
+    container_name: medusa
+    restart: unless-stopped
+    ports:
+      - "8081:8081/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Medusa:/config
+      - /portainer/TV:/tv
+      - /portainer/Downloads:/downloads
+    environment:
+      PUID: 1000
+      PGID: 100

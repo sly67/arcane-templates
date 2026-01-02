@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  penpot-http:
+    image: undefined
+    container_name: penpot-http
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      PENPOT_FLAGS_FE: enable-registration disable-secure-session-cookies enable-insecure-register enable-login-with-password
+      PENPOT_FLAGS_BE: enable-registration disable-secure-session-cookies enable-insecure-register disable-email-verification
+      PUBLIC_URI: "http://192.168.1.1:8624"
+      TELEMETRY_ENABLED: ${TELEMETRY_ENABLED}
+      PORT: 8624

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  webgrabplus:
+    image: linuxserver/webgrabplus:latest
+    container_name: webgrabplus
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/WebGrabPlus:/config
+      - /portainer/Files/AppData/WebGrabPlus:/data
+    environment:
+      PUID: 1000
+      PGID: 100

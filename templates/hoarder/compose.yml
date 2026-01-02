@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  hoarder:
+    image: undefined
+    container_name: hoarder
+    restart: unless-stopped

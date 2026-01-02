@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  nuts:
+    image: upshift/nut-upsd
+    container_name: nuts
+    restart: unless-stopped
+    ports:
+      - "3493:3493/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/nuts:/app

@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  ferdium:
+    image: undefined
+    container_name: ferdium
+    restart: unless-stopped

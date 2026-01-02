@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  app:
+    image: undefined
+    container_name: app
+    restart: unless-stopped
+    environment:
+      MANUBES_SECRET: ${MANUBES_SECRET}
+      ACCEPT_EULA: ${ACCEPT_EULA}

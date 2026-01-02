@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  speedtest-tracker:
+    image: henrywhitaker3/speedtest-tracker:dev-arm
+    container_name: speedtest-tracker
+    restart: unless-stopped
+    ports:
+      - "8765:80/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/speedtest-tracker:/config
+    environment:
+      OOKLA_EULA_GDPR: true

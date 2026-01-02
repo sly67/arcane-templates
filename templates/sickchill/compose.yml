@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  sickchill:
+    image: linuxserver/sickchill:latest
+    container_name: sickchill
+    restart: unless-stopped
+    ports:
+      - "8081:8081/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/SickChill:/config
+      - /portainer/Downloads:/downloads
+      - /portainer/TV:/tv
+    environment:
+      PUID: 1000
+      PGID: 100

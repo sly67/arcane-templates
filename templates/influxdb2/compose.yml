@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  influxdb2:
+    image: undefined
+    container_name: influxdb2
+    restart: unless-stopped

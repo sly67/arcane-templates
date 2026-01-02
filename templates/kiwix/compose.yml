@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  kiwix:
+    image: undefined
+    container_name: kiwix
+    restart: unless-stopped

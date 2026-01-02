@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  archivebox:
+    image: archivebox/archivebox:latest
+    container_name: archivebox
+    restart: unless-stopped
+    ports:
+      - "8002:8000/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/archivebox:/data
+    environment:
+      ALLOWED_HOSTS: *
+      MEDIA_MAX_SIZE: 750m
+      PUBLIC_INDEX: true
+      PUBLIC_SNAPSHOTS: true
+      PUBLIC_ADD_VIEW: false

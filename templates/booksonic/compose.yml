@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  booksonic:
+    image: linuxserver/booksonic:latest
+    container_name: booksonic
+    restart: unless-stopped
+    ports:
+      - "4040:4040/tcp"
+    volumes:
+      - /portainer/Books:/books
+      - /portainer/Files/Podcasts:/podcast
+      - /portainer/Files/AppData/Config/Booksonic:/config
+    environment:
+      PUID: 1000
+      PGID: 100
+      CONTEXT_PATH: booksonic

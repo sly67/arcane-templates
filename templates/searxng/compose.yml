@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  SearXNG:
+    image: searxng/searxng:latest
+    container_name: SearXNG
+    restart: unless-stopped
+    ports:
+      - "9017:8080/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/searxng:/etc/searxng
+    environment:
+      BASE_URL: "http://localhost:9017"
+      INSTANCE_NAME: my-instance

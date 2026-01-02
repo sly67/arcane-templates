@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  iobroker:
+    image: buanet/iobroker:latest
+    container_name: iobroker
+    restart: unless-stopped
+    ports:
+      - "8081:8081/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/iobrokerdata:/opt/iobroker
+    environment:
+      PUID: 1000
+      PGID: 1000

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  asciinema:
+    image: undefined
+    container_name: asciinema
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      HOST_NAME: localhost
+      HOST_PORT: 3033
+      SECRET_KEY: please-change-this-to-a-random-secret

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  Wps-office:
+    image: linuxserver/wps-office:latest
+    container_name: Wps-office
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "3001:3001/tcp"
+    volumes:
+      - /volume1/docker/wps-office/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

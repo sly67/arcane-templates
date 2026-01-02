@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  Ghostfolio:
+    image: undefined
+    container_name: Ghostfolio
+    restart: unless-stopped
+    ports:
+      - "3663:80/tcp"

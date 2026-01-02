@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  documize:
+    image: undefined
+    container_name: documize
+    restart: unless-stopped

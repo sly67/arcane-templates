@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  moodle:
+    image: undefined
+    container_name: moodle
+    restart: unless-stopped

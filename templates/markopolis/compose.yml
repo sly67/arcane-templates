@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  markopolis:
+    image: undefined
+    container_name: markopolis
+    restart: unless-stopped

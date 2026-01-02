@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  Tabby:
+    image: undefined
+    container_name: Tabby
+    restart: unless-stopped

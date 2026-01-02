@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  gazee:
+    image: linuxserver/gazee:latest
+    container_name: gazee
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/Gazee:/config
+      - /portainer/Comics:/comics
+      - /portainer/Files/AppData/Gazee:/mylar
+    environment:
+      PUID: 1000
+      PGID: 100

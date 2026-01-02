@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    container_name: Audiobookshelf
+    restart: unless-stopped
+    ports:
+      - "13378:80/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Audiobookshelf:/config
+      - /path/to/audiobooks:/audiobooks
+      - /path/to/podcasts:/podcasts
+      - /path/to/Metadata:/metadata
+    environment:
+      PUID: 1000
+      PGID: 1000

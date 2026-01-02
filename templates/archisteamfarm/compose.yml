@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  archisteamfarm:
+    image: justarchi/archisteamfarm:latest
+    container_name: archisteamfarm
+    restart: unless-stopped
+    ports:
+      - "1242:1242/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/ArchiSteamFarm/config:/app/config
+      - /portainer/Files/AppData/Config/ArchiSteamFarm/plugins:/app/plugins
+      - /portainer/Files/AppData/Config/ArchiSteamFarm/logs:/app/logs
+    environment:
+      PUID: 1000
+      PGID: 1000

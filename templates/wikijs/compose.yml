@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  Wikijs:
+    image: linuxserver/wikijs:latest
+    container_name: Wikijs
+    restart: unless-stopped
+    ports:
+      - "3100:3000/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Wikijs:/config
+      - /portainer/Files/AppData/Config/Wikijs/data:/data

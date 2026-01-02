@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  Openssh-server:
+    image: linuxserver/openssh-server:latest
+    container_name: Openssh-server
+    restart: unless-stopped
+    ports:
+      - "2222:2222/tcp"
+    volumes:
+      - /volume1/docker/openssh-server/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      PUBLIC_KEY: yourpublickey
+      PUBLIC_KEY_FILE: /path/to/file
+      PUBLIC_KEY_DIR: /path/to/directory/containing/_only_/pubkeys
+      PUBLIC_KEY_URL: "https://github.com/username.keys"
+      SUDO_ACCESS: false
+      PASSWORD_ACCESS: false
+      USER_PASSWORD: password
+      USER_PASSWORD_FILE: /path/to/file
+      USER_NAME: linuxserver.io

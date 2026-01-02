@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  Piper:
+    image: linuxserver/piper:latest
+    container_name: Piper
+    restart: unless-stopped
+    ports:
+      - "10200:10200/tcp"
+    volumes:
+      - /volume1/docker/piper/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      PIPER_VOICE: en_US-lessac-medium
+      PIPER_LENGTH: 1.0
+      PIPER_NOISE: 0.667
+      PIPER_NOISEW: 0.333
+      PIPER_SPEAKER: 0
+      PIPER_PROCS: 1

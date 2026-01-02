@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  prowlarr:
+    image: ghcr.io/linuxserver/prowlarr:develop
+    container_name: prowlarr
+    restart: unless-stopped
+    ports:
+      - "9696/tcp"
+    volumes:
+      - /opt/mediadepot/apps/prowlarr:/config
+      - /etc/localtime:/etc/localtime
+    environment:
+      PGID: 15000
+      PUID: 15000
+      TZ: America/Los_Angeles
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.prowlarr.loadbalancer.server.port: "9696"
+      traefik.http.routers.prowlarr.entrypoints: "websecure"
+      traefik.http.routers.prowlarr.tls.certresolver: "mydnschallenge"

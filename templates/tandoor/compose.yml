@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  tandoor:
+    image: undefined
+    container_name: tandoor
+    restart: unless-stopped

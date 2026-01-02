@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  heimdall:
+    image: linuxserver/heimdall:latest
+    container_name: heimdall
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+      - "443/tcp"
+    volumes:
+      - /opt/mediadepot/apps/heimdall:/config
+    environment:
+      PGID: 15000
+      PUID: 15000
+      TZ: America/Los_Angeles
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.heimdall.loadbalancer.server.port: "80"
+      traefik.http.routers.heimdall.entrypoints: "websecure"
+      traefik.http.routers.heimdall.tls.certresolver: "mydnschallenge"

@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  mayan:
+    image: undefined
+    container_name: mayan
+    restart: unless-stopped

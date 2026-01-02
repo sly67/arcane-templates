@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Webtop:
+    image: linuxserver/webtop:latest
+    container_name: Webtop
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - /volume1/docker/webtop/config:/config
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      SUBFOLDER: /

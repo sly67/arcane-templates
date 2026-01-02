@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  flowiseai:
+    image: undefined
+    container_name: flowiseai
+    restart: unless-stopped

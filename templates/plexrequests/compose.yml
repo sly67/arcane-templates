@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  plexrequests:
+    image: linuxserver/plexrequests:latest
+    container_name: plexrequests
+    restart: unless-stopped
+    ports:
+      - "3000/tcp"
+    volumes:
+      - /opt/mediadepot/apps/plexrequests:/config
+      - /etc/localtime:/etc/localtime
+    environment:
+      PGID: 15000
+      PUID: 15000
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.cardigann.plexrequests.server.port: "3000"
+      traefik.http.routers.cardigann.entrypoints: "websecure"
+      traefik.http.routers.cardigann.tls.certresolver: "mydnschallenge"

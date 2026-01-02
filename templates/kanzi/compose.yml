@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Kanzi:
+    image: linuxserver/kanzi:latest
+    container_name: Kanzi
+    restart: unless-stopped
+    ports:
+      - "8000:8000/tcp"
+    volumes:
+      - /volume1/docker/kanzi/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      INVOCATION_NAME: kanzi
+      URL_ENDPOINT: "https://server.com/kanzi/"

@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Komga:
+    image: gotson/komga:latest
+    container_name: Komga
+    restart: unless-stopped
+    ports:
+      - "8080:8080/tcp"
+    volumes:
+      - undefined:/books
+      - undefined:/comics
+      - undefined:/manga
+      - undefined:/config
+    environment:
+      PUID: 1000
+      PGID: 100

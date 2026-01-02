@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  plane:
+    image: undefined
+    container_name: plane
+    restart: unless-stopped

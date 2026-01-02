@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  dashdot:
+    image: undefined
+    container_name: dashdot
+    restart: unless-stopped

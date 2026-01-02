@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  tooljet:
+    image: undefined
+    container_name: tooljet
+    restart: unless-stopped

@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  TimeTagger:
+    image: undefined
+    container_name: TimeTagger
+    restart: unless-stopped

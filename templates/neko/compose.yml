@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  neko:
+    image: undefined
+    container_name: neko
+    restart: unless-stopped

@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  NUT Server:
+    image: instantlinux/nut-upsd:latest
+    container_name: NUT Server
+    restart: unless-stopped
+    ports:
+      - "3493:3493/tcp"
+    environment:
+      PUID: 1000
+      PGID: 1000
+      SERIAL: none
+      NAME: none
+      VENDOR ID: none
+      API_PASSWORD: none
+      DESCRIPTION: none

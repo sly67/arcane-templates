@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  proxitok:
+    image: undefined
+    container_name: proxitok
+    restart: unless-stopped

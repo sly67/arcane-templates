@@ -1,0 +1,22 @@
+# Freeboard
+
+Freeboard is a turn-key HTML-based 'engine' for dashboards. Besides a nice looking layout engine, it provides a plugin architecture for creating datasources (which fetch data) and widgets (which display data)— freeboard then does all the work to connect the two together.
+
+![Logo](https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/freeboard.jpg)
+
+## Docker Image
+
+`undefined`
+
+## Categories
+
+- Dashboardserver
+
+## Ports
+
+- 8000:80/tcp
+
+## Maintainer
+
+ https://github.com/mycroftwilde/portainer_templates/
+

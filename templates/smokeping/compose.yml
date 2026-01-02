@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  smokeping:
+    image: linuxserver/smokeping:latest
+    container_name: smokeping
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Smokeping:/config
+      - /portainer/Files/AppData/Smokeping:/data
+    environment:
+      PUID: 1000
+      PGID: 100

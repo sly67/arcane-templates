@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  your_spotify:
+    image: undefined
+    container_name: your_spotify
+    restart: unless-stopped

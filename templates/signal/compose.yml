@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  signal:
+    image: undefined
+    container_name: signal
+    restart: unless-stopped

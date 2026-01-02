@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  fetchcord:
+    image: undefined
+    container_name: fetchcord
+    restart: unless-stopped

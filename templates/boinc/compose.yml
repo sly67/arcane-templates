@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Boinc:
+    image: linuxserver/boinc:latest
+    container_name: Boinc
+    restart: unless-stopped
+    ports:
+      - "8080:8080/tcp"
+      - "8181:8181/tcp"
+    volumes:
+      - /volume1/docker/boinc/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      PASSWORD: ${PASSWORD}

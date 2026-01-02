@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  nitter:
+    image: undefined
+    container_name: nitter
+    restart: unless-stopped

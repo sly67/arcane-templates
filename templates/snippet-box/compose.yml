@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  Snippet-box:
+    image: pawelmalak/snippet-box:arm
+    container_name: Snippet-box
+    restart: unless-stopped
+    ports:
+      - "5010:5000/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Snippet-box:/app/data

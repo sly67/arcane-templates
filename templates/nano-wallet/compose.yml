@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  Nano-wallet:
+    image: linuxserver/nano-wallet:latest
+    container_name: Nano-wallet
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"

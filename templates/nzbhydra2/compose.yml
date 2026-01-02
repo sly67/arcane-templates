@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  nzbhydra2:
+    image: linuxserver/nzbhydra2:latest
+    container_name: nzbhydra2
+    restart: unless-stopped
+    ports:
+      - "5076:5076/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Nzbhydra2:/config
+      - /portainer/Downloads:/downloads
+    environment:
+      PUID: 1000
+      PGID: 100

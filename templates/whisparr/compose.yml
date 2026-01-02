@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  whisparr:
+    image: undefined
+    container_name: whisparr
+    restart: unless-stopped

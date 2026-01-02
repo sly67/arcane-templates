@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  codiad:
+    image: linuxserver/codiad:latest
+    container_name: codiad
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Codiad:/config
+    environment:
+      PUID: 1000
+      PGID: 100

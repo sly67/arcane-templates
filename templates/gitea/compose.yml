@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  gitea:
+    image: gitea/gitea:latest
+    container_name: gitea
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "222:22/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Gitea:/data
+      -  /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      PUID: 1000
+      PGID: 100

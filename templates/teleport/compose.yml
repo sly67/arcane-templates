@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  teleport:
+    image: undefined
+    container_name: teleport
+    restart: unless-stopped

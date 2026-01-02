@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  Ory Kratos Oathkeeper:
+    image: undefined
+    container_name: Ory Kratos Oathkeeper
+    restart: unless-stopped

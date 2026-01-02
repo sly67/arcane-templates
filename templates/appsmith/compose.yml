@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  appsmith:
+    image: undefined
+    container_name: appsmith
+    restart: unless-stopped

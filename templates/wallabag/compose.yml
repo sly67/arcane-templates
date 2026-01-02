@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  Wallabag:
+    image: undefined
+    container_name: Wallabag
+    restart: unless-stopped
+    ports:
+      - "8234:80/tcp"

@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  Flexget:
+    image: linuxserver/flexget:latest
+    container_name: Flexget
+    restart: unless-stopped
+    ports:
+      - "5050:5050/tcp"
+    volumes:
+      - /volume1/docker/flexget/config:/config
+      - /volume1/docker/flexget/data:/data
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      FG_LOG_LEVEL: info
+      FG_LOG_FILE: /config/flexget.log
+      FG_CONFIG_FILE: /config/.flexget/config.yml
+      FG_WEBUI_PASSWORD: info

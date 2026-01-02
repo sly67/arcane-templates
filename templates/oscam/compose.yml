@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  oscam:
+    image: linuxserver/oscam:latest
+    container_name: oscam
+    restart: unless-stopped
+    ports:
+      - "8888:8888/tcp"
+      - "10000:10000/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/OScam:/config
+    environment:
+      PUID: 1000
+      PGID: 100

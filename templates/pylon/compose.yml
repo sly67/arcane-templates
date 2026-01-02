@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  Pylon:
+    image: linuxserver/pylon:latest
+    container_name: Pylon
+    restart: unless-stopped
+    ports:
+      - "3131:3131/tcp"
+    volumes:
+      - /volume1/docker/pylon/config:/config
+      - /volume1/docker/pylon/code:/code
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      GITURL: "https://github.com/linuxserver/docker-pylon.git"
+      PYUSER: myuser
+      PYPASS: mypass

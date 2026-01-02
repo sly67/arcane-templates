@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  murmur:
+    image: goofball222/murmur:latest
+    container_name: murmur
+    restart: unless-stopped
+    ports:
+      - "64738:64738/tcp"
+      - "64738:64738/udp"
+    volumes:
+      - /etc/localtime:ro:/etc/localtime
+      - /portainer/Files/Config/Murmur:/opt/murmur/config
+      - /portainer/Files/Murmur/data:/opt/murmur/data
+      - /portainer/Files/Murmur/log:/opt/murmur/log
+    environment:
+      PUID: 1000
+      PGID: 100
+      TZ: ${TZ}

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  Babybuddy:
+    image: linuxserver/babybuddy:latest
+    container_name: Babybuddy
+    restart: unless-stopped
+    ports:
+      - "8000:8000/tcp"
+    volumes:
+      - /volume1/docker/babybuddy/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      CSRF_TRUSTED_ORIGINS: "http://127.0.0.1:8000,https://babybuddy.domain.com"

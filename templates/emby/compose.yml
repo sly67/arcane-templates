@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  Emby:
+    image: linuxserver/emby:latest
+    container_name: Emby
+    restart: unless-stopped
+    ports:
+      - "8096:8096/tcp"
+      - "8920:8920/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Emby:/config
+      - /portainer/TV:/data/tvshows
+      - /portainer/Movies:/data/movies
+    environment:
+      PUID: 1000
+      PGID: 100
+      TZ: ${TZ}

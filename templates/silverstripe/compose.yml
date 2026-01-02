@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  silverstripe:
+    image: undefined
+    container_name: silverstripe
+    restart: unless-stopped

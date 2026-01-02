@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  Endlessh:
+    image: linuxserver/endlessh:latest
+    container_name: Endlessh
+    restart: unless-stopped
+    ports:
+      - "22:2222/tcp"
+    volumes:
+      - /volume1/docker/endlessh/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      MSDELAY: 10000
+      MAXLINES: 32
+      MAXCLIENTS: 4096
+      LOGFILE: false
+      BINDFAMILY: ${BINDFAMILY}

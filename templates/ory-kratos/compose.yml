@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  Ory Kratos:
+    image: undefined
+    container_name: Ory Kratos
+    restart: unless-stopped

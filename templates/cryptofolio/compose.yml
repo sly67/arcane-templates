@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  cryptofolio:
+    image: xtrendence/cryptofolio:latest
+    container_name: cryptofolio
+    restart: unless-stopped
+    ports:
+      - "7280:80/tcp"

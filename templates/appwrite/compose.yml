@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  appwrite:
+    image: undefined
+    container_name: appwrite
+    restart: unless-stopped

@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  pritunl:
+    image: undefined
+    container_name: pritunl
+    restart: unless-stopped
+    environment:
+      REVERSE_PROXY: false
+      PRITUNL_OPTS: ${PRITUNL_OPTS}
+      MONGODB_URI: "mongodb://mongo:27017/pritunl"
+      WIREGUARD: false

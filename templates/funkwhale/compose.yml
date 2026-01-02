@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  funkwhale:
+    image: undefined
+    container_name: funkwhale
+    restart: unless-stopped

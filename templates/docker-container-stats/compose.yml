@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  Docker Container Stats:
+    image: undefined
+    container_name: Docker Container Stats
+    restart: unless-stopped

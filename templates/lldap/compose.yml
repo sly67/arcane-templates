@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  LLDAP:
+    image: nitnelave/lldap:stable-debian
+    container_name: LLDAP
+    restart: unless-stopped
+    ports:
+      - "3890:3890/tcp"
+      - "17170:17170/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/lldap/data:/data
+    environment:
+      LLDAP_JWT_SECRET: somesecretjwt
+      LLDAP_LDAP_USER_PASS: someadminpassword
+      LLDAP_LDAP_BASE_DN: dc=example,dc=com

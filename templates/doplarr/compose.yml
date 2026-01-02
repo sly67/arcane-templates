@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  Doplarr:
+    image: linuxserver/doplarr:latest
+    container_name: Doplarr
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/doplarr/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      DISCORD__TOKEN: ${DISCORD__TOKEN}
+      OVERSEERR__API: ${OVERSEERR__API}
+      OVERSEERR__URL: "http://localhost:5055"
+      RADARR__API: ${RADARR__API}
+      RADARR__URL: "http://localhost:7878"
+      SONARR__API: ${SONARR__API}
+      SONARR__URL: "http://localhost:8989"
+      DISCORD__MAX_RESULTS: 25
+      DISCORD__REQUESTED_MSG_STYLE: ":plain"
+      SONARR__QUALITY_PROFILE: ${SONARR__QUALITY_PROFILE}
+      RADARR__QUALITY_PROFILE: ${RADARR__QUALITY_PROFILE}
+      SONARR__ROOTFOLDER: ${SONARR__ROOTFOLDER}
+      RADARR__ROOTFOLDER: ${RADARR__ROOTFOLDER}
+      SONARR__LANGUAGE_PROFILE: ${SONARR__LANGUAGE_PROFILE}
+      OVERSEERR__DEFAULT_ID: ${OVERSEERR__DEFAULT_ID}
+      PARTIAL_SEASONS: true
+      LOG_LEVEL: ":info"
+      JAVA_OPTS: ${JAVA_OPTS}

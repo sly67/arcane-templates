@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Pidgin:
+    image: linuxserver/pidgin:latest
+    container_name: Pidgin
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - /volume1/docker/pidgin/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

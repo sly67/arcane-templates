@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  leantime:
+    image: undefined
+    container_name: leantime
+    restart: unless-stopped

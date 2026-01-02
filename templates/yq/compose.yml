@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Yq:
+    image: linuxserver/yq:latest
+    container_name: Yq
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/yq/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

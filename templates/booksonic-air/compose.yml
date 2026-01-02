@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  Booksonic-air:
+    image: linuxserver/booksonic-air:latest
+    container_name: Booksonic-air
+    restart: unless-stopped
+    ports:
+      - "4040:4040/tcp"
+    volumes:
+      - /volume1/docker/booksonic-air/config:/config
+      - /volume1/docker/booksonic-air/audiobooks:/audiobooks
+      - /volume1/docker/booksonic-air/podcasts:/podcasts
+      - /volume1/docker/booksonic-air/othermedia:/othermedia
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      CONTEXT_PATH: url-base

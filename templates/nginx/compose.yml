@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: linuxserver/nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+      - "443/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Nginx:/config
+    environment:
+      PUID: 1000
+      PGID: 100

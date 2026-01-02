@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Unrar:
+    image: linuxserver/unrar:latest
+    container_name: Unrar
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/unrar/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

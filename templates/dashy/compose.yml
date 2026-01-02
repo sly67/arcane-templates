@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  Dashy:
+    image: undefined
+    container_name: Dashy
+    restart: unless-stopped

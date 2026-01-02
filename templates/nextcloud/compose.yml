@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  nextcloud:
+    image: undefined
+    container_name: nextcloud
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 100
+      TZ: ${TZ}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      PORT: ${PORT}

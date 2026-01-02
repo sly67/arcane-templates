@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  Sshwifty:
+    image: niruix/sshwifty:latest
+    container_name: Sshwifty
+    restart: unless-stopped
+    ports:
+      - "8182:8182/tcp"

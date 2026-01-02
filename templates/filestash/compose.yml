@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  filestash:
+    image: undefined
+    container_name: filestash
+    restart: unless-stopped

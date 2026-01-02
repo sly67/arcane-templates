@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Bazarr:
+    image: hotio/bazarr:release
+    container_name: Bazarr
+    restart: unless-stopped
+    ports:
+      - "6767:6767/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Bazarr:/config
+      - /portainer/TV:/tv
+      - /portainer/Movies:/movies
+    environment:
+      PUID: 1000
+      PGID: 100
+      TZ: ${TZ}

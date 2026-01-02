@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  Emulatorjs:
+    image: linuxserver/emulatorjs:latest
+    container_name: Emulatorjs
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "80:80/tcp"
+      - "4001:4001/tcp"
+    volumes:
+      - /volume1/docker/emulatorjs/config:/config
+      - /volume1/docker/emulatorjs/data:/data
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      SUBFOLDER: /

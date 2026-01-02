@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  mcmyadmin2:
+    image: linuxserver/mcmyadmin2:latest
+    container_name: mcmyadmin2
+    restart: unless-stopped
+    ports:
+      - "8080:8080/tcp"
+      - "25565:25565/tcp"
+    volumes:
+      - undefined:/minecraft
+    environment:
+      PUID: 1000
+      PGID: 100

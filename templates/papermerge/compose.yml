@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Papermerge:
+    image: linuxserver/papermerge:latest
+    container_name: Papermerge
+    restart: unless-stopped
+    ports:
+      - "8000:8000/tcp"
+    volumes:
+      - /volume1/docker/papermerge/config:/config
+      - /volume1/docker/papermerge/data:/data
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      REDIS_URL: ${REDIS_URL}

@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  qdirstat:
+    image: jlesage/qdirstat:latest
+    container_name: qdirstat
+    restart: unless-stopped
+    ports:
+      - "5800/tcp"
+    volumes:
+      - /opt/mediadepot/apps/qdirstat:/config
+      - /opt:/storage/opt
+      - /mnt:/storage/mnt
+    environment:
+      PGID: 15000
+      PUID: 15000
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.qdirstat.loadbalancer.server.port: "5800"
+      traefik.http.routers.qdirstat.entrypoints: "websecure"
+      traefik.http.routers.qdirstat.tls.certresolver: "mydnschallenge"

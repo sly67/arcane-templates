@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  webtrees:
+    image: undefined
+    container_name: webtrees
+    restart: unless-stopped

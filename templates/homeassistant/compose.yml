@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Homeassistant:
+    image: linuxserver/homeassistant:latest
+    container_name: Homeassistant
+    restart: unless-stopped
+    ports:
+      - "8123:8123/tcp"
+    volumes:
+      - /volume1/docker/homeassistant/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

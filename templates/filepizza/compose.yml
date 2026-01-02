@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  filepizza:
+    image: undefined
+    container_name: filepizza
+    restart: unless-stopped

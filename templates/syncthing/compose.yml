@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  syncthing:
+    image: linuxserver/syncthing:latest
+    container_name: syncthing
+    restart: unless-stopped
+    ports:
+      - "8384:8384/tcp"
+      - "21027:21027/udp"
+      - "22000:22000/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Syncthing:/config
+      - undefined:/sync
+    environment:
+      PUID: 1000
+      PGID: 100

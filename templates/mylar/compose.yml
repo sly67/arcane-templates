@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  mylar:
+    image: linuxserver/mylar:latest
+    container_name: mylar
+    restart: unless-stopped
+    ports:
+      - "8090:8090/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Mylar:/config
+      - /portainer/Downloads:/downloads
+      - /portainer/Comics:/comics
+    environment:
+      PUID: 1000
+      PGID: 100

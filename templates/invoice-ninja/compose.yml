@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  invoice_ninja:
+    image: undefined
+    container_name: invoice_ninja
+    restart: unless-stopped
+    environment:
+      URL: invoice.my.domain
+      APP_KEY: ${APP_KEY}
+      TZ: ${TZ}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      PORT: ${PORT}

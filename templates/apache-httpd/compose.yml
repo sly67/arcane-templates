@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  apache-httpd:
+    image: httpd:latest
+    container_name: apache-httpd
+    restart: unless-stopped
+    ports:
+      - "8080:80/tcp"
+      - "8443:443/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/apache-httpd:/usr/local/apache2/htdocs/
+    environment:
+      PUID: 1000
+      PGID: 1000

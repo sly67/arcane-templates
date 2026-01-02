@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  Budge:
+    image: linuxserver/budge:latest
+    container_name: Budge
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+      - "443:443/tcp"
+    volumes:
+      - /volume1/docker/budge/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  healthchecks:
+    image: linuxserver/healthchecks
+    container_name: healthchecks
+    restart: unless-stopped
+    ports:
+      - "8000/tcp"
+    volumes:
+      - /opt/mediadepot/apps/healthchecks:/config
+    environment:
+      PGID: 15000
+      PUID: 15000
+      TZ: America/Los_Angeles
+      SITE_ROOT: healthchecks.depot.lan
+      SITE_NAME: healthchecks
+      DEFAULT_FROM_EMAIL: healthchecks@depot.lan
+      EMAIL_HOST: ${EMAIL_HOST}
+      EMAIL_PORT: ${EMAIL_PORT}
+      EMAIL_HOST_USER: ${EMAIL_HOST_USER}
+      EMAIL_HOST_PASSWORD: ${EMAIL_HOST_PASSWORD}
+      EMAIL_USE_TLS: ${EMAIL_USE_TLS}
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.healthchecks.loadbalancer.server.port: "8000"
+      traefik.http.routers.healthchecks.entrypoints: "websecure"
+      traefik.http.routers.healthchecks.tls.certresolver: "mydnschallenge"

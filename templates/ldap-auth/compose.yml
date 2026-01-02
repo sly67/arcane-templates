@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Ldap-auth:
+    image: linuxserver/ldap-auth:latest
+    container_name: Ldap-auth
+    restart: unless-stopped
+    ports:
+      - "8888:8888/tcp"
+      - "9000:9000/tcp"
+    environment:
+      TZ: Europe/Amsterdam
+      FERNETKEY: ${FERNETKEY}
+      CERTFILE: ${CERTFILE}
+      KEYFILE: ${KEYFILE}

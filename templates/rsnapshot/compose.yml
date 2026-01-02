@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Rsnapshot:
+    image: linuxserver/rsnapshot:latest
+    container_name: Rsnapshot
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/rsnapshot/config:/config
+      - /volume1/docker/rsnapshot/.snapshots:/.snapshots
+      - /volume1/docker/rsnapshot/data:/data
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  func:
+    image: undefined
+    container_name: func
+    restart: unless-stopped

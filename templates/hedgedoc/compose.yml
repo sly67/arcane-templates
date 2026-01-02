@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  Hedgedoc:
+    image: linuxserver/hedgedoc:latest
+    container_name: Hedgedoc
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - /volume1/docker/hedgedoc/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      DB_HOST: <hostname or ip>
+      DB_PORT: 3306
+      DB_USER: hedgedoc
+      DB_PASS: <secret password>
+      DB_NAME: hedgedoc
+      CMD_DOMAIN: localhost
+      CMD_URL_ADDPORT: false
+      CMD_PROTOCOL_USESSL: false
+      CMD_PORT: 3000
+      CMD_ALLOW_ORIGIN: ['localhost']
+      CMD_DB_DIALECT: ${CMD_DB_DIALECT}

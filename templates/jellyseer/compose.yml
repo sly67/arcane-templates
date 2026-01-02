@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  jellyseer:
+    image: undefined
+    container_name: jellyseer
+    restart: unless-stopped

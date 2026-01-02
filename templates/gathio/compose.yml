@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  gathio:
+    image: undefined
+    container_name: gathio
+    restart: unless-stopped

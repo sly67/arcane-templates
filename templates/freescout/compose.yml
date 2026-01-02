@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  freescout:
+    image: undefined
+    container_name: freescout
+    restart: unless-stopped

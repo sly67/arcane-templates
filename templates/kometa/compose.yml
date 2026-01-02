@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  Kometa:
+    image: linuxserver/kometa:latest
+    container_name: Kometa
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/kometa/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      KOMETA_CONFIG: /config/config.yml
+      KOMETA_TIME: "03:00"
+      KOMETA_RUN: False
+      KOMETA_TEST: False
+      KOMETA_NO_MISSING: False

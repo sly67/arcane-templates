@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Limnoria:
+    image: linuxserver/limnoria:latest
+    container_name: Limnoria
+    restart: unless-stopped
+    ports:
+      - "8080:8080/tcp"
+    volumes:
+      - /volume1/docker/limnoria/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

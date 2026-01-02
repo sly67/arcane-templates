@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  resilio:
+    image: linuxserver/resilio-sync:latest
+    container_name: resilio
+    restart: unless-stopped
+    ports:
+      - "8888/tcp"
+      - "55555/tcp"
+    volumes:
+      - /opt/mediadepot/apps/resilio:/config
+      - /media/storage:/sync
+      - /media/storage/downloads:/downloads
+    environment:
+      PGID: 15000
+      PUID: 15000
+      TZ: America/Los_Angeles
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.resilio.loadbalancer.server.port: "8888"
+      traefik.http.routers.resilio.entrypoints: "websecure"
+      traefik.http.routers.resilio.tls.certresolver: "mydnschallenge"

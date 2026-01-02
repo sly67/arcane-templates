@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  Zusam:
+    image: zusam/zusam
+    container_name: Zusam
+    restart: unless-stopped
+    ports:
+      - "4180:8080/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Zusam:/zusam/data
+    environment:
+      INIT_USER: email@domain.example
+      INIT_PASSWORD: initpass zusam

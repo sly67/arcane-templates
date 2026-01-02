@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  headphones:
+    image: linuxserver/headphones:latest
+    container_name: headphones
+    restart: unless-stopped
+    ports:
+      - "8181:8181/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Headphones:/config
+      - /portainer/Downloads:/Downloads
+      - /portainer/Music:/music
+    environment:
+      PUID: 1000
+      PGID: 100

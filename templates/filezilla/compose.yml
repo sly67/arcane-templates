@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Filezilla:
+    image: linuxserver/filezilla:latest
+    container_name: Filezilla
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - /volume1/docker/filezilla/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

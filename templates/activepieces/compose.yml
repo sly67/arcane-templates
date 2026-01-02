@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  activepieces:
+    image: undefined
+    container_name: activepieces
+    restart: unless-stopped

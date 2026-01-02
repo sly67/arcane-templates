@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  cops:
+    image: linuxserver/cops:latest
+    container_name: cops
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+    volumes:
+      - /portainer/Books:/books
+      - /portainer/Files/AppData/Config/Cops:/config
+    environment:
+      PUID: 1000
+      PGID: 100

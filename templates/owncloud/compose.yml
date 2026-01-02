@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  Owncloud:
+    image: undefined
+    container_name: Owncloud
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 100
+      TZ: ${TZ}
+      OWNCLOUD_DOMAIN: ${OWNCLOUD_DOMAIN}
+      DB_PASSWORD: ${DB_PASSWORD}
+      ADMIN_USERNAME: ${ADMIN_USERNAME}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      PORT: ${PORT}

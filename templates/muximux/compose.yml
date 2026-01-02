@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  muximux:
+    image: linuxserver/muximux:latest
+    container_name: muximux
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Muximux:/config
+    environment:
+      PUID: 1000
+      PGID: 100

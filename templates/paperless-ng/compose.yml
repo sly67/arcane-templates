@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Paperless-ng:
+    image: linuxserver/paperless-ng:latest
+    container_name: Paperless-ng
+    restart: unless-stopped
+    ports:
+      - "8000:8000/tcp"
+    volumes:
+      - /volume1/docker/paperless-ng/config:/config
+      - /volume1/docker/paperless-ng/data:/data
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      REDIS_URL: ${REDIS_URL}

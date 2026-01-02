@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  Fail2ban:
+    image: linuxserver/fail2ban:latest
+    container_name: Fail2ban
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/fail2ban/config:/config
+      - /volume1/docker/fail2ban/var/log:ro:/var/log:ro
+      - /volume1/docker/fail2ban/remotelogs/airsonic:ro:/remotelogs/airsonic:ro
+      - /volume1/docker/fail2ban/remotelogs/apache2:ro:/remotelogs/apache2:ro
+      - /volume1/docker/fail2ban/remotelogs/authelia:ro:/remotelogs/authelia:ro
+      - /volume1/docker/fail2ban/remotelogs/emby:ro:/remotelogs/emby:ro
+      - /volume1/docker/fail2ban/remotelogs/filebrowser:ro:/remotelogs/filebrowser:ro
+      - /volume1/docker/fail2ban/remotelogs/homeassistant:ro:/remotelogs/homeassistant:ro
+      - /volume1/docker/fail2ban/remotelogs/lighttpd:ro:/remotelogs/lighttpd:ro
+      - /volume1/docker/fail2ban/remotelogs/nextcloud:ro:/remotelogs/nextcloud:ro
+      - /volume1/docker/fail2ban/remotelogs/nginx:ro:/remotelogs/nginx:ro
+      - /volume1/docker/fail2ban/remotelogs/nzbget:ro:/remotelogs/nzbget:ro
+      - /volume1/docker/fail2ban/remotelogs/overseerr:ro:/remotelogs/overseerr:ro
+      - /volume1/docker/fail2ban/remotelogs/prowlarr:ro:/remotelogs/prowlarr:ro
+      - /volume1/docker/fail2ban/remotelogs/radarr:ro:/remotelogs/radarr:ro
+      - /volume1/docker/fail2ban/remotelogs/sabnzbd:ro:/remotelogs/sabnzbd:ro
+      - /volume1/docker/fail2ban/remotelogs/sonarr:ro:/remotelogs/sonarr:ro
+      - /volume1/docker/fail2ban/remotelogs/unificontroller:ro:/remotelogs/unificontroller:ro
+      - /volume1/docker/fail2ban/remotelogs/vaultwarden:ro:/remotelogs/vaultwarden:ro
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      VERBOSITY: -vv

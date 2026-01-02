@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  FoundryVTT:
+    image: felddy/foundryvtt:release
+    container_name: FoundryVTT
+    restart: unless-stopped
+    ports:
+      - "30000:30000/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/foundryvtt:/data
+    environment:
+      FOUNDRY_USERNAME: John
+      FOUNDRY_PASSWORD: password
+      FOUNDRY_ADMIN_KEY: changeme
+      CONTAINER_PRESERVE_CONFIG: true

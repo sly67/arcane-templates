@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  Snipe-it:
+    image: linuxserver/snipe-it:latest
+    container_name: Snipe-it
+    restart: unless-stopped
+    ports:
+      - "8080:80/tcp"
+    volumes:
+      - /volume1/docker/snipe-it/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      APP_URL: <hostname or ip>
+      MYSQL_PORT_3306_TCP_ADDR: <mysql host>
+      MYSQL_PORT_3306_TCP_PORT: <mysql port>
+      MYSQL_DATABASE: <mysql database>
+      MYSQL_USER: <mysql pass>
+      MYSQL_PASSWORD: changeme

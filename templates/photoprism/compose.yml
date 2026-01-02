@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  photoprism:
+    image: undefined
+    container_name: photoprism
+    restart: unless-stopped

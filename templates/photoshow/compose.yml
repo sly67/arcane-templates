@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  photoshow:
+    image: linuxserver/photoshow:latest
+    container_name: photoshow
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+    volumes:
+      - /portainer/Pictures:/Pictures
+      - /portainer/Files/AppData/Photoshow/Thumbs:/Thumbs
+      - /portainer/Files/AppData/Config/PhotoShow:/config
+    environment:
+      PUID: 1000
+      PGID: 100

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  Dokuwiki:
+    image: linuxserver/dokuwiki:latest
+    container_name: Dokuwiki
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+      - "443:443/tcp"
+    volumes:
+      - /volume1/docker/dokuwiki/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

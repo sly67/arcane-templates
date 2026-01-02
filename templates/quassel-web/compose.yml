@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  Quassel-web:
+    image: linuxserver/quassel-web:latest
+    container_name: Quassel-web
+    restart: unless-stopped
+    ports:
+      - "64080:64080/tcp"
+      - "64443:64443/tcp"
+    volumes:
+      - /volume1/docker/quassel-web/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      QUASSEL_CORE: 192.168.1.10
+      QUASSEL_PORT: 4242
+      QUASSEL_HTTPS: ${QUASSEL_HTTPS}
+      URL_BASE: /quassel

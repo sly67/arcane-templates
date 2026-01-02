@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  monica:
+    image: undefined
+    container_name: monica
+    restart: unless-stopped

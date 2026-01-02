@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  Chevereto:
+    image: nmtan/chevereto:latest
+    container_name: Chevereto
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+    volumes:
+      - undefined:/var/www/html/images
+    environment:
+      PUID: 1000
+      PGID: 100
+      CHEVERETO_DB_HOST: ${CHEVERETO_DB_HOST}
+      CHEVERETO_DB_USERNAME: ${CHEVERETO_DB_USERNAME}
+      CHEVERETO_DB_PASSWORD: ${CHEVERETO_DB_PASSWORD}
+      CHEVERETO_DB_NAME: ${CHEVERETO_DB_NAME}
+      CHEVERETO_DB_PREFIX: ${CHEVERETO_DB_PREFIX}

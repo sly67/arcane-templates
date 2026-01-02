@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Bambustudio:
+    image: linuxserver/bambustudio:latest
+    container_name: Bambustudio
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "3001:3001/tcp"
+    volumes:
+      - /volume1/docker/bambustudio/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      DARK_MODE: true

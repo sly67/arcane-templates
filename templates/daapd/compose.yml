@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  daapd:
+    image: linuxserver/daapd:latest
+    container_name: daapd
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/Daapd:/config
+      - /portainer/Music:/music
+    environment:
+      PUID: 1000
+      PGID: 100

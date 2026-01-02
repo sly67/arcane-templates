@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  xwiki:
+    image: undefined
+    container_name: xwiki
+    restart: unless-stopped

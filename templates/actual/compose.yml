@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  actual:
+    image: undefined
+    container_name: actual
+    restart: unless-stopped

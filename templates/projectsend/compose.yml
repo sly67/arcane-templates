@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  projectsend:
+    image: linuxserver/projectsend:latest
+    container_name: projectsend
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+    volumes:
+      - /portainer/Files/AppData/ProjectSend:/data
+      - /portainer/Files/AppData/Config/ProjectSend:/config
+    environment:
+      PUID: 1000
+      PGID: 100

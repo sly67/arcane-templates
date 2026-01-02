@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Ci:
+    image: linuxserver/ci:latest
+    container_name: Ci
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/ci/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  passky-server:
+    image: rabbitcompany/passky-server:latest
+    container_name: passky-server
+    restart: unless-stopped
+    ports:
+      - "8080:80/tcp"
+    volumes:
+      - /portainer/Files/AppData/Passky-Server:/var/www/html/databases
+    environment:
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}

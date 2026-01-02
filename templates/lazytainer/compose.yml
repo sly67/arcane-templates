@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  lazytainer:
+    image: undefined
+    container_name: lazytainer
+    restart: unless-stopped

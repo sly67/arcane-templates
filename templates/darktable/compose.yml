@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  Darktable:
+    image: linuxserver/darktable:latest
+    container_name: Darktable
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "3001:3001/tcp"
+    volumes:
+      - /volume1/docker/darktable/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

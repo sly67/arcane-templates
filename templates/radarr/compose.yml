@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  radarr:
+    image: linuxserver/radarr:latest
+    container_name: radarr
+    restart: unless-stopped
+    ports:
+      - "7878/tcp"
+    volumes:
+      - /opt/mediadepot/apps/radarr:/config
+      - /media/storage/downloads/movies:/downloads
+      - /media/storage/movies:/movies
+      - /media/temp/blackhole/movies:/blackhole
+      - /etc/localtime:/etc/localtime
+    environment:
+      PGID: 15000
+      PUID: 15000
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.radarr.loadbalancer.server.port: "7878"
+      traefik.http.routers.radarr.entrypoints: "websecure"
+      traefik.http.routers.radarr.tls.certresolver: "mydnschallenge"

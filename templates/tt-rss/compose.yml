@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  tt-rss:
+    image: lunik1/tt-rss:latest
+    container_name: tt-rss
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/tt-rss:/config
+    environment:
+      PUID: 1000
+      PGID: 100

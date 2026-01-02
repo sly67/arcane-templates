@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  librespeed:
+    image: linuxserver/librespeed:latest
+    container_name: librespeed
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+    volumes:
+      - /opt/mediadepot/apps/librespeed/config:/config
+    environment:
+      PUID: 15000
+      PGID: 15000
+      TZ: America/Los_Angeles
+      PASSWORD: PASSWORD
+      CUSTOM_RESULTS: false
+      DB_TYPE: sqlite
+      DB_NAME: DB_NAME
+      DB_HOSTNAME: DB_HOSTNAME
+      DB_USERNAME: DB_USERNAME
+      DB_PASSWORD: DB_PASSWORD
+      DB_PORT: DB_PORT
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.librespeed.loadbalancer.server.port: "80"
+      traefik.http.routers.librespeed.entrypoints: "websecure"
+      traefik.http.routers.librespeed.tls.certresolver: "mydnschallenge"

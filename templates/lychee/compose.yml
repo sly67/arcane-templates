@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  lychee:
+    image: linuxserver/lychee:latest
+    container_name: lychee
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Lychee:/config
+      - /portainer/Pictures:/pictures
+    environment:
+      PUID: 1000
+      PGID: 100

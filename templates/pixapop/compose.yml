@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  Pixapop:
+    image: linuxserver/pixapop:latest
+    container_name: Pixapop
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/pixapop/config:/config
+      - /volume1/docker/pixapop/photos:/photos
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      APP_USERNAME: admin
+      APP_PASSWORD: admin

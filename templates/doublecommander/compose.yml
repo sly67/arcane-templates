@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Doublecommander:
+    image: linuxserver/doublecommander:latest
+    container_name: Doublecommander
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "3001:3001/tcp"
+    volumes:
+      - /volume1/docker/doublecommander/config:/config
+      - /volume1/docker/doublecommander/data:/data
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

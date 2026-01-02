@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  poste.io:
+    image: undefined
+    container_name: poste.io
+    restart: unless-stopped

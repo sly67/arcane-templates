@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  piwigo:
+    image: linuxserver/piwigo:latest
+    container_name: piwigo
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/PiWigo:/config
+    environment:
+      PUID: 1000
+      PGID: 100

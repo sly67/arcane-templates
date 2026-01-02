@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  Openvscode-server:
+    image: linuxserver/openvscode-server:latest
+    container_name: Openvscode-server
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - /volume1/docker/openvscode-server/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      CONNECTION_TOKEN: ${CONNECTION_TOKEN}
+      CONNECTION_SECRET: ${CONNECTION_SECRET}
+      SUDO_PASSWORD: password
+      SUDO_PASSWORD_HASH: ${SUDO_PASSWORD_HASH}

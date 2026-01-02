@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  flame-dashboard:
+    image: pawelmalak/flame
+    container_name: flame-dashboard
+    restart: unless-stopped
+    ports:
+      - "5005:5005/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/flame-dashboard:/app/data

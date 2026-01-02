@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  castopod:
+    image: undefined
+    container_name: castopod
+    restart: unless-stopped

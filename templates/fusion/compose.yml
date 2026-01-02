@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  fusion:
+    image: undefined
+    container_name: fusion
+    restart: unless-stopped

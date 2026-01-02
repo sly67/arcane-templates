@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  Petio:
+    image: undefined
+    container_name: Petio
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 100
+      TZ: ${TZ}
+      PORT: ${PORT}

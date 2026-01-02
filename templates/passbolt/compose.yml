@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  Passbolt:
+    image: undefined
+    container_name: Passbolt
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/Zurich
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: passbolt
+      MYSQL_USER: passbolt
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      PASSBOLT_PORT: 443
+      PASSBOLT_URL: "https://passbolt.local"
+      EMAIL_FROM_NAME: Passbolt
+      EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS}
+      EMAIL_SMTP_SERVER: smtp.gmail.com
+      EMAIL_SMTP_PORT: 587
+      EMAIL_USERNAME: ${EMAIL_USERNAME}
+      EMAIL_PASSWORD: ${EMAIL_PASSWORD}
+      EMAIL_TLS: true

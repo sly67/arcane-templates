@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  Kali-linux:
+    image: linuxserver/kali-linux:latest
+    container_name: Kali-linux
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "3001:3001/tcp"
+    volumes:
+      - /volume1/docker/kali-linux/config:/config
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      SUBFOLDER: /
+      TITLE: Kali Linux

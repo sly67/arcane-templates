@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  FlareSolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: FlareSolverr
+    restart: unless-stopped
+    ports:
+      - "8191:8191/tcp"
+    environment:
+      LOG_LEVEL: info
+      LOG_HTML: false
+      CAPTCHA_SOLVER: none
+      TZ: America/New_York

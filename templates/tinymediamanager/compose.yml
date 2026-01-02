@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  tinymediamanager:
+    image: undefined
+    container_name: tinymediamanager
+    restart: unless-stopped

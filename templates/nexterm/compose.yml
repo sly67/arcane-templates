@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  nexterm:
+    image: undefined
+    container_name: nexterm
+    restart: unless-stopped

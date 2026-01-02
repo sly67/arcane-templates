@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  OLED_Stats:
+    image: mklements/oled_stats:latest
+    container_name: OLED_Stats
+    restart: unless-stopped
+    volumes:
+      - /etc/timezone:/etc/timezone
+      - /etc/localtime:/etc/localtime
+    environment:
+      start: 8
+      end: 23

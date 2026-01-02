@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  postgresql:
+    image: postgres:latest
+    container_name: postgresql
+    restart: unless-stopped
+    ports:
+      - "5432:5432/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/PostgreSQL:/var/lib/postgresql/data
+    environment:
+      PUID: 1000
+      PGID: 1000
+      POSTGRES_PASSWORD: rootpassword
+      TZ: America/New_York

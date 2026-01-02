@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  Samba:
+    image: dperson/samba:latest
+    container_name: Samba
+    restart: unless-stopped
+    ports:
+      - "139:139/tcp"
+      - "445:445/tcp"
+    volumes:
+      - /portainer/Downloads:/share
+    environment:
+      PUID: 1000
+      PGID: 1000
+      USERID: 1000
+      GROUPID: 1000
+      USER: guest;guest
+      PERMISSIONS: true
+      SHARE: portainer;/share;yes;no;yes;guest

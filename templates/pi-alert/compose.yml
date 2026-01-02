@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  pi.alert:
+    image: jokobsk/pi.alert
+    container_name: pi.alert
+    restart: unless-stopped
+    ports:
+      - "20211:20211/udp"
+    volumes:
+      - /portainer/Files/AppData/Config/pi.alert:/config
+    environment:
+      PUID: 1000
+      PGID: 100

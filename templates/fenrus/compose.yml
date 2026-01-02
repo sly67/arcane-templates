@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  Fenrus:
+    image: undefined
+    container_name: Fenrus
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      PORT: ${PORT}

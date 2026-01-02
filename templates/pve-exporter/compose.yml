@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  pve-exporter:
+    image: undefined
+    container_name: pve-exporter
+    restart: unless-stopped

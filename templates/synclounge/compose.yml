@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  Synclounge:
+    image: linuxserver/synclounge:latest
+    container_name: Synclounge
+    restart: unless-stopped
+    ports:
+      - "8088:8088/tcp"
+    environment:
+      AUTH_LIST: plexuser1,plexuser2,email1,machineid1

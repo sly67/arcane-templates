@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  wger:
+    image: undefined
+    container_name: wger
+    restart: unless-stopped

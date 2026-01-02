@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  Nano:
+    image: linuxserver/nano:latest
+    container_name: Nano
+    restart: unless-stopped
+    ports:
+      - "8075:8075/tcp"
+      - "7076:3000/tcp"
+      - "7077:3001/tcp"
+    volumes:
+      - /volume1/docker/nano/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      PEER_HOST: localhost
+      LIVE_GENESIS_PUB: GENESIS_PUBLIC
+      LIVE_GENESIS_ACCOUNT: nano_xxxxxx
+      LIVE_GENESIS_WORK: WORK_FOR_BLOCK
+      LIVE_GENESIS_SIG: BLOCK_SIGNATURE
+      CLI_OPTIONS: --config node.enable_voting=true
+      LMDB_BOOTSTRAP_URL: "http://example.com/Nano_64_version_20.7z"

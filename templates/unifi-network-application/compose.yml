@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  Unifi-network-application:
+    image: linuxserver/unifi-network-application:latest
+    container_name: Unifi-network-application
+    restart: unless-stopped
+    ports:
+      - "8443:8443/tcp"
+      - "3478:3478/udp"
+      - "10001:10001/udp"
+      - "8080:8080/tcp"
+      - "1900:1900/udp"
+      - "8843:8843/tcp"
+      - "8880:8880/tcp"
+      - "6789:6789/tcp"
+      - "5514:5514/udp"
+    volumes:
+      - /volume1/docker/unifi-network-application/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      MONGO_USER: unifi
+      MONGO_PASS: ${MONGO_PASS}
+      MONGO_HOST: unifi-db
+      MONGO_PORT: 27017
+      MONGO_DBNAME: unifi
+      MONGO_AUTHSOURCE: admin
+      MEM_LIMIT: 1024
+      MEM_STARTUP: 1024
+      MONGO_TLS: ${MONGO_TLS}

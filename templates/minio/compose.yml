@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    restart: unless-stopped
+    ports:
+      - "8760:9000/tcp"
+      - "8761:9090/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/MinIO:/data
+    environment:
+      PUID: 1000
+      PGID: 1000
+      MINIO_ROOT_USER: ROOTUSER
+      MINIO_ROOT_PASSWORD: CHANGEME123
+      MINIO_SERVER_URL: ${MINIO_SERVER_URL}

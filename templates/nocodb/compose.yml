@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  NocoDB:
+    image: undefined
+    container_name: NocoDB
+    restart: unless-stopped

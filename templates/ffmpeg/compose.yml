@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Ffmpeg:
+    image: linuxserver/ffmpeg:latest
+    container_name: Ffmpeg
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/ffmpeg/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

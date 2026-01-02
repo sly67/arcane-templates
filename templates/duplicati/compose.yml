@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  duplicati:
+    image: linuxserver/duplicati:latest
+    container_name: duplicati
+    restart: unless-stopped
+    ports:
+      - "8200/tcp"
+    volumes:
+      - /opt/mediadepot/apps/duplicati:/config
+      - /opt/mediadepot/apps/:/source
+    environment:
+      TZ: America/Los_Angeles
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.duplicati.loadbalancer.server.port: "8200"
+      traefik.http.routers.duplicati.entrypoints: "websecure"
+      traefik.http.routers.duplicati.tls.certresolver: "mydnschallenge"

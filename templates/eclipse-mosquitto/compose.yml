@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  eclipse-mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: eclipse-mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883/tcp"
+      - "9001:9001/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/eclipse-mosquitto/config:/mosquitto/config
+      - /portainer/Files/AppData/Config/eclipse-mosquitto/data:/mosquitto/data
+      - /portainer/Files/AppData/Config/eclipse-mosquitto/log:/mosquitto/log

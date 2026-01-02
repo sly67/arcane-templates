@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  letsencrypt / SWAG:
+    image: linuxserver/swag:latest
+    container_name: letsencrypt / SWAG
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+      - "443/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/LetsEncrypt:/config
+    environment:
+      EMAIL: ${EMAIL}
+      URL: ${URL}
+      SUBDOMAINS: ${SUBDOMAINS}
+      ONLY_SUBDOMAINS: ${ONLY_SUBDOMAINS}
+      DHLEVEL: ${DHLEVEL}
+      PUID: 1000
+      PGID: 100
+      VALIDATION: ${VALIDATION}
+      DNSPLUGIN: ${DNSPLUGIN}

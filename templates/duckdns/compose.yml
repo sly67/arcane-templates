@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  duckdns:
+    image: linuxserver/duckdns:latest
+    container_name: duckdns
+    restart: unless-stopped
+    environment:
+      SUBDOMAINS: ${SUBDOMAINS}
+      TOKEN: ${TOKEN}
+      TZ: America/Los_Angeles

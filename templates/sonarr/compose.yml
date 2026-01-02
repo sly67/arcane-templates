@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  sonarr:
+    image: linuxserver/sonarr:latest
+    container_name: sonarr
+    restart: unless-stopped
+    ports:
+      - "8989/tcp"
+    volumes:
+      - /opt/mediadepot/apps/sonarr:/config
+      - /media/storage/downloads/tvshows:/downloads
+      - /media/storage/tvshows:/tv
+      - /media/temp/blackhole/tvshows:/blackhole
+      - /etc/localtime:/etc/localtime
+    environment:
+      PGID: 15000
+      PUID: 15000
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.sonarr.loadbalancer.server.port: "8989"
+      traefik.http.routers.sonarr.entrypoints: "websecure"
+      traefik.http.routers.sonarr.tls.certresolver: "mydnschallenge"

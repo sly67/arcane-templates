@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  nginx-proxy-manager-sqllite-goaccess:
+    image: undefined
+    container_name: nginx-proxy-manager-sqllite-goaccess
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+      - "81:81/tcp"
+      - "443:443/tcp"
+      - "7880:7880/tcp"
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/New_York
+      SKIP_ARCHIVED_LOGS: false
+      BASIC_AUTH: false
+      BASIC_AUTH_USERNAME: user
+      BASIC_AUTH_PASSWORD: Password

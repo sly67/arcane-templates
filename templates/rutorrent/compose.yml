@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  rutorrent:
+    image: mediadepot/rutorrent
+    container_name: rutorrent
+    restart: unless-stopped
+    ports:
+      - "80/tcp"
+      - "51413/tcp"
+      - "6881/tcp"
+    volumes:
+      - /opt/mediadepot/apps/rutorrent:/config
+      - /media/temp/processing:/processing
+      - /media/temp/blackhole:/blackhole
+      - /media/storage/downloads:/downloads
+    environment:
+      PGID: 15000
+      PUID: 15000
+      TZ: America/Los_Angeles
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.rutorrent.loadbalancer.server.port: "80"
+      traefik.http.routers.rutorrent.entrypoints: "websecure"
+      traefik.http.routers.rutorrent.tls.certresolver: "mydnschallenge"

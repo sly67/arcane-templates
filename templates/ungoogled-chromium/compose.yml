@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Ungoogled-chromium:
+    image: linuxserver/ungoogled-chromium:latest
+    container_name: Ungoogled-chromium
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "3001:3001/tcp"
+    volumes:
+      - /volume1/docker/ungoogled-chromium/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      CHROME_CLI: "https://www.linuxserver.io/"

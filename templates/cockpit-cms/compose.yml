@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  cockpit-cms:
+    image: agentejo/cockpit:latest
+    container_name: cockpit-cms
+    restart: unless-stopped
+    ports:
+      - "8088:80/tcp"

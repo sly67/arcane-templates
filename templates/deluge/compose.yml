@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  deluge:
+    image: linuxserver/deluge:latest
+    container_name: deluge
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/Deluge:/config
+      - /portainer/Downloads:/downloads
+    environment:
+      PUID: 1000
+      PGID: 100
+      UMASK_SET: ${UMASK_SET}

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  maloja:
+    image: krateng/maloja:latest
+    container_name: maloja
+    restart: unless-stopped
+    ports:
+      - "42010:42010/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Maloja/Data:/data
+    environment:
+      MALOJA_FORCE_PASSWORD: malojapassword
+      MALOJA_DATA_DIRECTORY: /data

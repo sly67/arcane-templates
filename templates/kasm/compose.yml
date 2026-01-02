@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  Kasm:
+    image: linuxserver/kasm:latest
+    container_name: Kasm
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "443:443/tcp"
+    volumes:
+      - /volume1/docker/kasm/opt:/opt
+      - /volume1/docker/kasm/profiles:/profiles
+      - /dev/input:/dev/input
+      - /run/udev/data:/run/udev/data
+    environment:
+      KASM_PORT: 443
+      DOCKER_HUB_USERNAME: USER
+      DOCKER_HUB_PASSWORD: PASS
+      DOCKER_MTU: 1500

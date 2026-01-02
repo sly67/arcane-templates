@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  mailpile:
+    image: undefined
+    container_name: mailpile
+    restart: unless-stopped

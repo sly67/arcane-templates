@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  MeTube:
+    image: alexta69/metube:latest
+    container_name: MeTube
+    restart: unless-stopped
+    ports:
+      - "8081:8081/tcp"
+    volumes:
+      - /portainer/Downloads:/downloads
+    environment:
+      PUID: 1000
+      PGID: 1000

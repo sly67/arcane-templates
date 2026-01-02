@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  matomo:
+    image: undefined
+    container_name: matomo
+    restart: unless-stopped
+    ports:
+      - "8282:80/tcp"

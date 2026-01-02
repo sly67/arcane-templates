@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  frigatenvr:
+    image: undefined
+    container_name: frigatenvr
+    restart: unless-stopped

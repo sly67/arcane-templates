@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  linkstack:
+    image: undefined
+    container_name: linkstack
+    restart: unless-stopped

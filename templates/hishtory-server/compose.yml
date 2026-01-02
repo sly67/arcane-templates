@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Hishtory-server:
+    image: linuxserver/hishtory-server:latest
+    container_name: Hishtory-server
+    restart: unless-stopped
+    ports:
+      - "8080:8080/tcp"
+    volumes:
+      - /volume1/docker/hishtory-server/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      HISHTORY_POSTGRES_DB: "postgresql://${HISHTORY_DB_USER}:${HISHTORY_DB_PASS}@hishtory-db:5432/hishtory?sslmode=disable"
+      HISHTORY_SQLITE_DB: /config/hishtory.db

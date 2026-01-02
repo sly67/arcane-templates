@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  openbudgeteer:
+    image: undefined
+    container_name: openbudgeteer
+    restart: unless-stopped

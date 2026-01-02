@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  budibase:
+    image: undefined
+    container_name: budibase
+    restart: unless-stopped

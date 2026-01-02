@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  pingvin-share:
+    image: undefined
+    container_name: pingvin-share
+    restart: unless-stopped

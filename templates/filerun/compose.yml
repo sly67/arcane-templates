@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  filerun:
+    image: undefined
+    container_name: filerun
+    restart: unless-stopped

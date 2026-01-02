@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  lidarr:
+    image: hotio/lidarr:release
+    container_name: lidarr
+    restart: unless-stopped
+    ports:
+      - "8686:8686/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Lidarr:/config
+      - /portainer/Downloads:/downloads
+      - /portainer/Music:/music
+    environment:
+      PUID: 1000
+      PGID: 100

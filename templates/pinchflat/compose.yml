@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  pinchflat:
+    image: undefined
+    container_name: pinchflat
+    restart: unless-stopped

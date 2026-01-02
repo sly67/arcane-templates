@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Wireshark:
+    image: linuxserver/wireshark:latest
+    container_name: Wireshark
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - /volume1/docker/wireshark/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

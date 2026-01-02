@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Libreoffice:
+    image: linuxserver/libreoffice:latest
+    container_name: Libreoffice
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - /volume1/docker/libreoffice/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

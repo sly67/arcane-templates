@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  web-check:
+    image: undefined
+    container_name: web-check
+    restart: unless-stopped

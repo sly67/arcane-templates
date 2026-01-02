@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  trudesk:
+    image: undefined
+    container_name: trudesk
+    restart: unless-stopped

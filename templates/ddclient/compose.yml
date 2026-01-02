@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Ddclient:
+    image: linuxserver/ddclient:latest
+    container_name: Ddclient
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/ddclient/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

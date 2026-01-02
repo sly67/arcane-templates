@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Build-agent:
+    image: linuxserver/build-agent:latest
+    container_name: Build-agent
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/build-agent/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

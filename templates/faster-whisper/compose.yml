@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  Faster-whisper:
+    image: linuxserver/faster-whisper:latest
+    container_name: Faster-whisper
+    restart: unless-stopped
+    ports:
+      - "10300:10300/tcp"
+    volumes:
+      - /volume1/docker/faster-whisper/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      WHISPER_MODEL: tiny-int8
+      WHISPER_BEAM: 1
+      WHISPER_LANG: en

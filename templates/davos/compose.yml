@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  davos:
+    image: linuxserver/davos:latest
+    container_name: davos
+    restart: unless-stopped
+    ports:
+      - "8080/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Davos:/config
+      - /portainer/Downloads:/downloads
+    environment:
+      PUID: 1000
+      PGID: 100

@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  tautulli:
+    image: linuxserver/tautulli:latest
+    container_name: tautulli
+    restart: unless-stopped
+    ports:
+      - "8181/tcp"
+    volumes:
+      - /opt/mediadepot/apps/tautulli:/config
+    environment:
+      PGID: 15000
+      PUID: 15000
+      TZ: America/Los_Angeles
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.tautulli.loadbalancer.server.port: "8181"
+      traefik.http.routers.tautulli.entrypoints: "websecure"
+      traefik.http.routers.tautulli.tls.certresolver: "mydnschallenge"

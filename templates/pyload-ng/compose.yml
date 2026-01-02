@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Pyload-ng:
+    image: linuxserver/pyload-ng:latest
+    container_name: Pyload-ng
+    restart: unless-stopped
+    ports:
+      - "8000:8000/tcp"
+      - "9666:9666/tcp"
+    volumes:
+      - /volume1/docker/pyload-ng/config:/config
+      - /volume1/docker/pyload-ng/downloads:/downloads
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

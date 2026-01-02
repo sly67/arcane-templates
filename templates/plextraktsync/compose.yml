@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  plextraktsync:
+    image: undefined
+    container_name: plextraktsync
+    restart: unless-stopped

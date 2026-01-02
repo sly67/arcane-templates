@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  Flame:
+    image: pawelmalak/flame:multiarch
+    container_name: Flame
+    restart: unless-stopped
+    ports:
+      - "5005:5005/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Flame/data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      PASSWORD: ${PASSWORD}

@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  Remotely:
+    image: undefined
+    container_name: Remotely
+    restart: unless-stopped

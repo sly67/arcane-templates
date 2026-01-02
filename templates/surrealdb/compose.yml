@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  SurrealDB:
+    image: surrealdb/surrealdb:latest
+    container_name: SurrealDB
+    restart: unless-stopped
+    ports:
+      - "8020:8000/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/surrealdb/data:/data
+    environment:
+      SDB_USERNAME: default_username
+      SDB_PASSWORD: default_password

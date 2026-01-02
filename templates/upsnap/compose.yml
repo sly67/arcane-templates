@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  upsnap:
+    image: undefined
+    container_name: upsnap
+    restart: unless-stopped

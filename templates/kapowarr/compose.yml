@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  kapowarr:
+    image: undefined
+    container_name: kapowarr
+    restart: unless-stopped

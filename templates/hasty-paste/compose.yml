@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  hasty-paste:
+    image: undefined
+    container_name: hasty-paste
+    restart: unless-stopped

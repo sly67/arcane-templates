@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  lazylibrarian:
+    image: linuxserver/lazylibrarian:latest
+    container_name: lazylibrarian
+    restart: unless-stopped
+    ports:
+      - "5299:5299/tcp"
+    volumes:
+      - undefined:/config
+      - undefined:/downloads
+      - undefined:/books
+    environment:
+      PUID: 1000
+      PGID: 100

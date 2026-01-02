@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  freeboard:
+    image: undefined
+    container_name: freeboard
+    restart: unless-stopped
+    ports:
+      - "8000:80/tcp"

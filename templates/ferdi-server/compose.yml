@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  ferdi-server:
+    image: undefined
+    container_name: ferdi-server
+    restart: unless-stopped

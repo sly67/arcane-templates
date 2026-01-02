@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Kimai:
+    image: linuxserver/kimai:latest
+    container_name: Kimai
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+      - "443:443/tcp"
+    volumes:
+      - /volume1/docker/kimai/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      DATABASE_URL: "mysql://your_db_user:your_db_pass@your_db_host:3306/your_db_name?charset=your_db_charset&serverVersion=your_db_version"

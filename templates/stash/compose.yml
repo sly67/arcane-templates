@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  Stash:
+    image: undefined
+    container_name: Stash
+    restart: unless-stopped
+    environment:
+      PORT: ${PORT}

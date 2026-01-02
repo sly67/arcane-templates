@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  fireshare:
+    image: undefined
+    container_name: fireshare
+    restart: unless-stopped

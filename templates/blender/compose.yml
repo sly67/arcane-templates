@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  Blender:
+    image: linuxserver/blender:latest
+    container_name: Blender
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "3001:3001/tcp"
+    volumes:
+      - /volume1/docker/blender/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      SUBFOLDER: /

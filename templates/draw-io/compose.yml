@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  draw.io:
+    image: jgraph/drawio:latest
+    container_name: draw.io
+    restart: unless-stopped
+    ports:
+      - "8080:8080/tcp"

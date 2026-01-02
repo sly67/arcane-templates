@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  chibisafe:
+    image: undefined
+    container_name: chibisafe
+    restart: unless-stopped

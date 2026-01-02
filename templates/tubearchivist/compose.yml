@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  tubearchivist:
+    image: undefined
+    container_name: tubearchivist
+    restart: unless-stopped

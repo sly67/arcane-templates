@@ -1,0 +1,33 @@
+# Dokuwiki
+
+[Dokuwiki](https://www.dokuwiki.org/dokuwiki/) is a simple to use and highly versatile Open Source wiki software that doesn't require a database. It is loved by users for its clean and readable syntax. The ease of maintenance, backup and integration makes it an administrator's favorite. Built in access controls and authentication connectors make DokuWiki especially useful in the enterprise context and the large number of plugins contributed by its vibrant community allow for a broad range of use cases beyond a traditional wiki.
+
+![Logo](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/dokuwiki-icon.png)
+
+## Docker Image
+
+`linuxserver/dokuwiki:latest`
+
+## Categories
+
+- Notesserver
+
+## Ports
+
+- 80:80/tcp
+- 443:443/tcp
+
+## Environment Variables
+
+- `PUID` - PUID (default: `1024`)
+- `PGID` - PGID (default: `100`)
+- `TZ` - TZ (default: `Europe/Amsterdam`)
+
+## Volumes
+
+- `/volume1/docker/dokuwiki/config` → `/config`
+
+## Maintainer
+
+ https://github.com/mycroftwilde/portainer_templates/
+

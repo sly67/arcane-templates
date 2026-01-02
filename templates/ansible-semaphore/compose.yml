@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  ansible-semaphore:
+    image: undefined
+    container_name: ansible-semaphore
+    restart: unless-stopped

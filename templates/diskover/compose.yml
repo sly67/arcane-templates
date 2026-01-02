@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  Diskover:
+    image: linuxserver/diskover:latest
+    container_name: Diskover
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/diskover/config:/config
+      - /volume1/docker/diskover/data:/data
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      ES_HOST: elasticsearch
+      ES_PORT: 9200

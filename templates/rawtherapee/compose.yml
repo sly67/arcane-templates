@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  Rawtherapee:
+    image: linuxserver/rawtherapee:latest
+    container_name: Rawtherapee
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+      - "3001:3001/tcp"
+    volumes:
+      - /volume1/docker/rawtherapee/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

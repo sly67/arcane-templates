@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Socket-proxy:
+    image: linuxserver/socket-proxy:latest
+    container_name: Socket-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80/tcp"
+    volumes:
+      - /volume1/docker/socket-proxy/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  znc:
+    image: linuxserver/znc:latest
+    container_name: znc
+    restart: unless-stopped
+    ports:
+      - "6501:6501/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/ZNC:/config
+    environment:
+      PUID: 1000
+      PGID: 100

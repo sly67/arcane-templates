@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  minisatip:
+    image: linuxserver/minisatip:latest
+    container_name: minisatip
+    restart: unless-stopped
+    ports:
+      - "8875:8875/tcp"
+      - "554:554/tcp"
+      - "1900:1900/udp"
+    environment:
+      PUID: 1000
+      PGID: 100

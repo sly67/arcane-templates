@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  tvheadend:
+    image: linuxserver/tvheadend:latest
+    container_name: tvheadend
+    restart: unless-stopped
+    ports:
+      - "9981:9981/tcp"
+      - "9982:9982/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/TVHeadend:/config
+      - undefined:/recordings
+    environment:
+      PUID: 1000
+      PGID: 100

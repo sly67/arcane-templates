@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  RaspberryPi-Docker-Monitor:
+    image: undefined
+    container_name: RaspberryPi-Docker-Monitor
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+    environment:
+      PROMETHEUS_RETENTION: 15d

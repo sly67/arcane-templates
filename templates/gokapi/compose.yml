@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  gokapi:
+    image: undefined
+    container_name: gokapi
+    restart: unless-stopped

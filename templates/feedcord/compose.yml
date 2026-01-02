@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  feedcord:
+    image: undefined
+    container_name: feedcord
+    restart: unless-stopped

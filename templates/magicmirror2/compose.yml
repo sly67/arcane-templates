@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  MagicMirror2:
+    image: karsten13/magicmirror:latest
+    container_name: MagicMirror2
+    restart: unless-stopped
+    ports:
+      - "8080:8080/tcp"
+    volumes:
+      - undefined:/opt/magic_mirror/config
+      - undefined:/opt/magic_mirror/modules
+      - undefined:/opt/magic_mirror/css
+    environment:
+      PUID: 1000
+      PGID: 100

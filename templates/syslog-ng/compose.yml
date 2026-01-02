@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  Syslog-ng:
+    image: linuxserver/syslog-ng:latest
+    container_name: Syslog-ng
+    restart: unless-stopped
+    ports:
+      - "514:5514/udp"
+      - "601:6601/tcp"
+      - "6514:6514/tcp"
+    volumes:
+      - /volume1/docker/syslog-ng/config:/config
+      - /var/log:/var/log
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  Feed2toot:
+    image: linuxserver/feed2toot:latest
+    container_name: Feed2toot
+    restart: unless-stopped
+    volumes:
+      - /volume1/docker/feed2toot/config:/config
+    environment:
+      PUID: 1024
+      PGID: 100
+      TZ: Europe/Amsterdam
+      FEED_LIMIT: 5

@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  mstream:
+    image: linuxserver/mstream:latest
+    container_name: mstream
+    restart: unless-stopped
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - /portainer/Files/AppData/Config/Mstream:/config
+      - /portainer/Downloads:/music
