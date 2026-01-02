@@ -1,6 +1,6 @@
 # Arcane Templates Registry
 
-This repository contains 551 Docker Compose templates converted from Portainer templates for use with [Arcane](https://getarcane.app/).
+This repository contains 551 Docker Compose templates converted from [Lissy93/portainer-templates](https://github.com/Lissy93/portainer-templates) for use with [Arcane](https://getarcane.app/).
 
 ## Overview
 
@@ -62,7 +62,7 @@ If you find issues with any template or want to add new ones:
 
 ## Conversion Notes
 
-These templates were automatically converted from Portainer format. Some manual adjustments may be needed for:
+These templates were automatically converted from [Lissy93/portainer-templates](https://github.com/Lissy93/portainer-templates) Portainer format. Some manual adjustments may be needed for:
 
 - Volume paths (currently set to `/opt/mediadepot/apps/` from the original templates)
 - Network configurations
@@ -74,7 +74,7 @@ Individual templates retain their original licenses. Please check each template'
 
 ## Credits
 
-- Original Portainer templates from [mediadepot/templates](https://github.com/mediadepot/templates)
+- Original Portainer templates from [Lissy93/portainer-templates](https://github.com/Lissy93/portainer-templates)
 - Conversion performed using automated script
 - Arcane template format based on [Arcane Templates Schema](https://registry.getarcane.app/schema.json)
 
