@@ -2,16 +2,17 @@ node_modules/
 .DS_Store
 *.log
 .env
+
+# Portainer source files
 portainer_registery*.json
 arcane_registry.json
-fix-incomplete.js
-find-alternatives.js
-merge-registries.js
+
+# Temporary/generated files
 incomplete-templates.json
+*.backup.json
+*_merged.json
+
+# System files
 *.sh
 *.claude
 /tmp/
-merge-registries.js
-*.backup.json
-add-tags.js
-convert.js

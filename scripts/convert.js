@@ -1,29 +1,54 @@
 #!/usr/bin/env node
 
+/**
+ * Portainer to Arcane Template Converter
+ *
+ * This script converts Portainer template format to Arcane template format.
+ * It creates a complete directory structure with compose.yml, .env.example,
+ * and README.md for each template.
+ *
+ * Input: portainer_registery.json (Portainer v3 template format)
+ * Output:
+ *   - templates/ directory with individual template folders
+ *   - registry.json (Arcane registry format)
+ *
+ * Usage: node scripts/convert.js
+ */
+
 const fs = require('fs');
 const path = require('path');
 
-// Read the Portainer template
-const portainerData = JSON.parse(fs.readFileSync('portainer_registery.json', 'utf8'));
+// Configuration
+const GITHUB_USERNAME = 'sly67';
+const GITHUB_REPO = 'arcane-templates';
+const INPUT_FILE = 'portainer_registery.json';
 
-// Create templates directory
-const templatesDir = path.join(__dirname, 'templates');
+// Read the Portainer template data
+console.log('Reading Portainer template data...');
+const portainerData = JSON.parse(fs.readFileSync(INPUT_FILE, 'utf8'));
+
+// Create templates directory if it doesn't exist
+const templatesDir = path.join(__dirname, '..', 'templates');
 if (!fs.existsSync(templatesDir)) {
   fs.mkdirSync(templatesDir, { recursive: true });
 }
 
-// Initialize Arcane registry
+// Initialize Arcane registry structure
 const arcaneRegistry = {
   "$schema": "https://registry.getarcane.app/schema.json",
   "name": "Arcane Templates from Portainer",
   "description": "Docker Compose Templates converted from Portainer templates",
   "author": "Converted",
-  "url": "https://github.com/yourusername/arcane-templates",
-  "version": "1.0.0",
+  "url": `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}`,
+  "version": "2.0.0",
   "templates": []
 };
 
-// Helper function to create a slug from name
+/**
+ * Creates a URL-safe slug from a template name
+ * @param {string} name - Template name
+ * @returns {string} URL-safe slug
+ */
 function createSlug(name) {
   if (!name) return 'unnamed-template';
   return name
@@ -32,13 +57,21 @@ function createSlug(name) {
     .replace(/^-+|-+$/g, '');
 }
 
-// Helper function to convert Portainer volumes to Docker Compose format
+/**
+ * Converts Portainer volume format to Docker Compose format
+ * @param {Array} volumes - Portainer volumes array
+ * @returns {Array} Docker Compose volume strings
+ */
 function convertVolumes(volumes) {
   if (!volumes || volumes.length === 0) return [];
   return volumes.map(vol => `${vol.bind}:${vol.container}`);
 }
 
-// Helper function to convert Portainer env to Docker Compose format
+/**
+ * Converts Portainer environment variables to Docker Compose format
+ * @param {Array} envVars - Portainer environment variables
+ * @returns {Object} Environment variable object
+ */
 function convertEnv(envVars) {
   if (!envVars || envVars.length === 0) return {};
   const env = {};
@@ -46,13 +79,18 @@ function convertEnv(envVars) {
     if (e.default) {
       env[e.name] = e.default;
     } else {
+      // Use variable substitution for values without defaults
       env[e.name] = `\${${e.name}}`;
     }
   });
   return env;
 }
 
-// Helper function to convert Portainer labels to Docker Compose format
+/**
+ * Converts Portainer labels to Docker Compose format
+ * @param {Array} labels - Portainer labels array
+ * @returns {Object} Labels object
+ */
 function convertLabels(labels) {
   if (!labels || labels.length === 0) return {};
   const labelObj = {};
@@ -62,18 +100,27 @@ function convertLabels(labels) {
   return labelObj;
 }
 
-// Helper function to convert Portainer ports to Docker Compose format
+/**
+ * Converts Portainer ports to Docker Compose format
+ * @param {Array} ports - Portainer ports array
+ * @returns {Array} Port strings
+ */
 function convertPorts(ports) {
   if (!ports || ports.length === 0) return [];
   return ports.map(port => port);
 }
 
-// Helper function to generate docker-compose.yml content as YAML string
+/**
+ * Generates Docker Compose YAML content
+ * @param {Object} template - Portainer template object
+ * @returns {string} YAML content as string
+ */
 function generateDockerCompose(template) {
   const serviceName = template.name || 'app';
   let yaml = '';
 
-  // Handle stack-based templates (type 3) differently
+  // Handle stack-based templates (type 3) that don't have an image
+  // These reference external compose files in repositories
   if (!template.image && template.repository) {
     yaml += `# This template is based on an external compose file\n`;
     yaml += `# Repository: ${template.repository.url}\n`;
@@ -91,12 +138,13 @@ function generateDockerCompose(template) {
     return yaml;
   }
 
+  // Generate standard Docker Compose configuration
   yaml = `version: '3.8'\n\nservices:\n  ${serviceName}:\n`;
   yaml += `    image: ${template.image || 'IMAGE_NOT_SPECIFIED'}\n`;
   yaml += `    container_name: ${serviceName}\n`;
   yaml += `    restart: unless-stopped\n`;
 
-  // Add ports
+  // Add port mappings
   const ports = convertPorts(template.ports);
   if (ports.length > 0) {
     yaml += `    ports:\n`;
@@ -105,7 +153,7 @@ function generateDockerCompose(template) {
     });
   }
 
-  // Add volumes
+  // Add volume mounts
   const volumes = convertVolumes(template.volumes);
   if (volumes.length > 0) {
     yaml += `    volumes:\n`;
@@ -119,7 +167,7 @@ function generateDockerCompose(template) {
   if (Object.keys(env).length > 0) {
     yaml += `    environment:\n`;
     Object.entries(env).forEach(([key, value]) => {
-      // Escape values that contain special characters
+      // Escape values that contain special YAML characters
       const escapedValue = value.toString().includes(':') || value.toString().includes('#')
         ? `"${value}"`
         : value;
@@ -127,7 +175,7 @@ function generateDockerCompose(template) {
     });
   }
 
-  // Add labels
+  // Add Docker labels
   const labels = convertLabels(template.labels);
   if (Object.keys(labels).length > 0) {
     yaml += `    labels:\n`;
@@ -139,20 +187,27 @@ function generateDockerCompose(template) {
   return yaml;
 }
 
-// Helper function to generate .env.example content
+/**
+ * Generates .env.example file content with sensible defaults
+ * @param {Object} template - Portainer template object
+ * @returns {string} Environment file content
+ */
 function generateEnvExample(template) {
   if (!template.env || template.env.length === 0) return '';
 
   let envContent = '# Environment variables for ' + (template.title || template.name) + '\n\n';
 
   template.env.forEach(e => {
+    // Add label as comment if different from variable name
     if (e.label && e.label !== e.name) {
       envContent += `# ${e.label}\n`;
     }
+    // Add description as comment
     if (e.description) {
       envContent += `# ${e.description}\n`;
     }
-    // Provide sensible defaults for common variables
+
+    // Provide sensible defaults for common environment variables
     let defaultValue = e.default || '';
     if (!defaultValue) {
       if (e.name === 'TZ') defaultValue = 'UTC';
@@ -170,20 +225,27 @@ function generateEnvExample(template) {
   return envContent;
 }
 
-// Helper function to generate README.md content
+/**
+ * Generates README.md documentation for a template
+ * @param {Object} template - Portainer template object
+ * @returns {string} Markdown content
+ */
 function generateReadme(template) {
   let readme = `# ${template.title || template.name}\n\n`;
   readme += `${template.description}\n\n`;
 
+  // Add logo if available
   if (template.logo) {
     readme += `![Logo](${template.logo})\n\n`;
   }
 
-  // Add Docker Image or Repository info based on template type
+  // Add Docker Image info for container-based templates
   if (template.image) {
     readme += `## Docker Image\n\n`;
     readme += `\`${template.image}\`\n\n`;
-  } else if (template.repository) {
+  }
+  // Add repository info for stack-based templates
+  else if (template.repository) {
     readme += `## Source Repository\n\n`;
     readme += `- Repository: ${template.repository.url}\n`;
     if (template.repository.stackfile) {
@@ -192,6 +254,7 @@ function generateReadme(template) {
     readme += `\n`;
   }
 
+  // Add categories
   if (template.categories && template.categories.length > 0) {
     readme += `## Categories\n\n`;
     template.categories.forEach(cat => {
@@ -200,6 +263,7 @@ function generateReadme(template) {
     readme += `\n`;
   }
 
+  // Add exposed ports
   if (template.ports && template.ports.length > 0) {
     readme += `## Ports\n\n`;
     template.ports.forEach(port => {
@@ -208,6 +272,7 @@ function generateReadme(template) {
     readme += `\n`;
   }
 
+  // Add environment variables documentation
   if (template.env && template.env.length > 0) {
     readme += `## Environment Variables\n\n`;
     template.env.forEach(e => {
@@ -219,6 +284,7 @@ function generateReadme(template) {
     readme += `\n`;
   }
 
+  // Add volume mounts documentation
   if (template.volumes && template.volumes.length > 0) {
     readme += `## Volumes\n\n`;
     template.volumes.forEach(vol => {
@@ -227,6 +293,7 @@ function generateReadme(template) {
     readme += `\n`;
   }
 
+  // Add maintainer info
   if (template.maintainer) {
     readme += `## Maintainer\n\n`;
     readme += `${template.maintainer}\n\n`;
@@ -235,8 +302,8 @@ function generateReadme(template) {
   return readme;
 }
 
-// Convert each template
-console.log(`Converting ${portainerData.templates.length} templates...`);
+// Main conversion process
+console.log(`Converting ${portainerData.templates.length} templates...\n`);
 
 portainerData.templates.forEach((template, index) => {
   const templateId = createSlug(template.name);
@@ -247,30 +314,31 @@ portainerData.templates.forEach((template, index) => {
     fs.mkdirSync(templateDir, { recursive: true });
   }
 
-  // Generate docker-compose.yml
+  // Generate and write docker-compose.yml
   const composeContent = generateDockerCompose(template);
   fs.writeFileSync(
     path.join(templateDir, 'compose.yml'),
     composeContent
   );
 
-  // Generate .env.example
+  // Generate and write .env.example
   const envContent = generateEnvExample(template);
   fs.writeFileSync(
     path.join(templateDir, '.env.example'),
     envContent
   );
 
-  // Generate README.md
+  // Generate and write README.md
   const readmeContent = generateReadme(template);
   fs.writeFileSync(
     path.join(templateDir, 'README.md'),
     readmeContent
   );
 
-  // Add to Arcane registry
+  // Add template to Arcane registry
+  // Convert categories to normalized tags
   const tags = (template.categories || ['other']).map(cat =>
-    cat.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+    cat.toLowerCase().replace(/[^a-z0-9]+/g, '')
   );
 
   arcaneRegistry.templates.push({
@@ -279,31 +347,33 @@ portainerData.templates.forEach((template, index) => {
     description: template.description || '',
     version: '1.0.0',
     author: 'Converted from Portainer',
-    compose_url: `https://raw.githubusercontent.com/yourusername/arcane-templates/main/templates/${templateId}/compose.yml`,
-    env_url: `https://raw.githubusercontent.com/yourusername/arcane-templates/main/templates/${templateId}/.env.example`,
-    documentation_url: `https://github.com/yourusername/arcane-templates/tree/main/templates/${templateId}`,
+    compose_url: `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/main/templates/${templateId}/compose.yml`,
+    env_url: `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/main/templates/${templateId}/.env.example`,
+    documentation_url: `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/tree/main/templates/${templateId}`,
     tags: tags
   });
 
+  // Progress indicator
   if ((index + 1) % 50 === 0) {
     console.log(`Processed ${index + 1} templates...`);
   }
 });
 
-// Write the Arcane registry
+// Write the Arcane registry JSON
 fs.writeFileSync(
-  'registry.json',
+  path.join(__dirname, '..', 'registry.json'),
   JSON.stringify(arcaneRegistry, null, 2)
 );
 
-console.log(`\nConversion complete!`);
-console.log(`- Converted ${arcaneRegistry.templates.length} templates`);
-console.log(`- Created templates in: ${templatesDir}`);
-console.log(`- Generated registry.json`);
-console.log(`\nNext steps:`);
-console.log(`1. Review the generated files`);
-console.log(`2. Update the URLs in registry.json with your actual GitHub repository URL`);
-console.log(`3. Initialize git: git init`);
-console.log(`4. Add files: git add .`);
-console.log(`5. Commit: git commit -m "Initial commit of converted templates"`);
-console.log(`6. Push to your GitHub repository`);
+// Summary
+console.log(`\n${'='.repeat(60)}`);
+console.log('CONVERSION COMPLETE');
+console.log('='.repeat(60));
+console.log(`Templates converted: ${arcaneRegistry.templates.length}`);
+console.log(`Templates directory: ${templatesDir}`);
+console.log(`Registry file: registry.json`);
+console.log('\nNext steps:');
+console.log('1. Review the generated files');
+console.log('2. Run fix-incomplete.js to fetch missing compose files');
+console.log('3. Run add-tags.js to enhance template tags');
+console.log('4. Commit and push to GitHub');
