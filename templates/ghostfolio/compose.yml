@@ -1,9 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/xneo1/portainer_templates
+# Stack file: Template/Stack/ghostfolio.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   Ghostfolio:
-    image: undefined
-    container_name: Ghostfolio
-    restart: unless-stopped
-    ports:
-      - "3663:80/tcp"
+    # Configure your service here
+    # image: your-image:tag

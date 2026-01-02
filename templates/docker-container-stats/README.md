@@ -4,9 +4,10 @@ Docker Container Stats is a web interface for viewing historical and current sta
 
 ![Logo](https://raw.githubusercontent.com/Poeschl/Hassio-Addons/master/container-stats/logo.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/docker-container-stats.yml
 
 ## Categories
 

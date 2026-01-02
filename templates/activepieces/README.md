@@ -4,9 +4,10 @@ Automate your marketing, sales and operations
 
 ![Logo](https://cdn.activepieces.com/brand/full-logo-white.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/activepieces.yml
 
 ## Categories
 

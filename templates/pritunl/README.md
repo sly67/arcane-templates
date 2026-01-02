@@ -4,9 +4,10 @@ Pritunl container built on Alpine Linux. Supports IPv6 and running behind a reve
 
 ![Logo](https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/pritunl/Images/pritunl.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/SelfhostedPro/selfhosted_templates
+- Stack File: Template/Stack/pritunl.yml
 
 ## Categories
 

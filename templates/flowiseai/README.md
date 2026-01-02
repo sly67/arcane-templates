@@ -4,9 +4,10 @@ Open source UI visual tool to build your customized LLM flow using LangchainJS, 
 
 ![Logo](https://flowiseai.com/_next/static/images/flowise_logo_dark-6c1a356f4868d3deb7864323ff93a0fa.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/flowiseai.yml
 
 ## Categories
 

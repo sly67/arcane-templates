@@ -4,9 +4,10 @@ Open source collaborative knowledge base for modern teams
 
 ![Logo](https://avatars.githubusercontent.com/u/1765001)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/lissy93/portainer-templates
+- Stack File: sources/stacks/outline.yml
 
 ## Categories
 

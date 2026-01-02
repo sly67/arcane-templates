@@ -1,14 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/SelfhostedPro/selfhosted_templates
+# Stack file: Template/Stack/invoice-ninja.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   invoice_ninja:
-    image: undefined
-    container_name: invoice_ninja
-    restart: unless-stopped
-    environment:
-      URL: invoice.my.domain
-      APP_KEY: ${APP_KEY}
-      TZ: ${TZ}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      PORT: ${PORT}
+    # Configure your service here
+    # image: your-image:tag

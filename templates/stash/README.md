@@ -4,9 +4,10 @@ Helps you organize your *Ahem* ...more MATURE Media material....
 
 ![Logo](https://dashy.to/img/dashy.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/mycroftwilde/portainer_templates
+- Stack File: Template/Stack/stash.yml
 
 ## Categories
 

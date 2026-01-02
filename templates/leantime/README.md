@@ -4,9 +4,10 @@ Leantime is an open source project management solution to make your ideas realit
 
 ![Logo](https://s3-us-west-2.amazonaws.com/leantime-website/wp-content/uploads/2022/07/24022056/logo-large.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/leantime.yml
 
 ## Categories
 

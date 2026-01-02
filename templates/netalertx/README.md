@@ -4,9 +4,10 @@ WIFI / LAN intruder detector. Scans for devices connected to your network and al
 
 ![Logo](https://avatars.githubusercontent.com/u/96159884?s=48&v=4)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/netalertx.yml
 
 ## Categories
 

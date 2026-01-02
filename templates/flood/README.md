@@ -4,9 +4,10 @@ A docker image with qBittorrent and the Flood UI, also optional WireGuard VPN su
 
 ![Logo](https://hotio.dev/img/image-logos/flood.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/flood.yml
 
 ## Categories
 

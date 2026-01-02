@@ -2,9 +2,10 @@
 
 YourSpotify is a self-hosted application that tracks what you listen and offers you a dashboard to explore statistics about it!
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/your_spotify.yml
 
 ## Categories
 

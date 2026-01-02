@@ -4,9 +4,10 @@ TinyMediaManager is a media management tool written in Java/Swing. It is written
 
 ![Logo](https://www.tinymediamanager.org/images/avatar.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/tinymediamanager.yml
 
 ## Categories
 

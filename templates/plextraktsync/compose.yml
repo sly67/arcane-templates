@@ -1,7 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/mediadepot/templates
+# Stack file: stacks/plextraktsync/docker-compose.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   plextraktsync:
-    image: undefined
-    container_name: plextraktsync
-    restart: unless-stopped
+    # Configure your service here
+    # image: your-image:tag

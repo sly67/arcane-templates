@@ -4,9 +4,10 @@ Where are your photos and documents? With Nextcloud you pick a server of your ch
 
 ![Logo](https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/nextcloud-icon.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/Qballjos/portainer_templates
+- Stack File: Template/Stack/nextcloud.yml
 
 ## Categories
 

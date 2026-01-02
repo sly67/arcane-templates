@@ -4,9 +4,10 @@ Your Budgets, Calendars, Meals, Inventory, Tasks, and so much more in one simple
 
 ![Logo](https://homechart.app/images/homechart.min.776793e5e4334866f0799e8a84b8448efb1b06cb2762b2bb20f99068ac36136c.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/homechart.yml
 
 ## Categories
 

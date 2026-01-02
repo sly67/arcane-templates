@@ -2,9 +2,10 @@
 
 Markopolis is like the self hosted version of Obsidian Publish.
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/markopolis.yml
 
 ## Categories
 

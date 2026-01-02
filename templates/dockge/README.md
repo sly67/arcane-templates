@@ -4,9 +4,10 @@ A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented
 
 ![Logo](https://github.com/louislam/dockge/raw/master/frontend/public/icon.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/dockge.yml
 
 ## Categories
 

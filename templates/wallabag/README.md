@@ -4,9 +4,10 @@ wallabag is a web application allowing you to save web pages for later reading. 
 
 ![Logo](https://www.wallabag.org/user/themes/boxify/img/logo-wallabag.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/wallabag.yml
 
 ## Categories
 

@@ -2,9 +2,10 @@
 
 Lazytainer monitors network traffic to containers. If there is traffic, the container runs, otherwise the container is stopped/paused.
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/lazytainer.yml
 
 ## Categories
 

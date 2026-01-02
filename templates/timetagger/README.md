@@ -4,9 +4,10 @@ Open source time-tracker with an interactive user experience and powerful report
 
 ![Logo](https://timetagger.app/timetagger_wl.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/timetagger.yml
 
 ## Categories
 

@@ -1,18 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/shmolf/portainer-templates
+# Stack file: stacks/immich/docker-compose.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   immich:
-    image: undefined
-    container_name: immich
-    restart: unless-stopped
-    environment:
-      PUID: 1000
-      PGID: 1000
-      IMMICH_VERSION: release
-      DB_USERNAME: postgres
-      DB_PASSWORD: please-change-this-to-a-random-secret
-      DB_DATABASE_NAME: immich
-      DB_HOSTNAME: immich_postgres
-      UPLOAD_LOCATION: /portainer/Files/AppData/Immich/upload
-      REDIS_HOSTNAME: immich_redis
-      PORT: 2283
+    # Configure your service here
+    # image: your-image:tag

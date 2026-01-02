@@ -4,9 +4,10 @@ Koillection is a self-hosted collection manager created to keep track of physica
 
 ![Logo](https://user-images.githubusercontent.com/20560781/80213166-0e560e00-8639-11ea-944e-4f79fdbcef55.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/koillection.yml
 
 ## Categories
 

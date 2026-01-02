@@ -4,9 +4,10 @@ Invoices, Expenses and Tasks built with Laravel and Flutter.
 
 ![Logo](https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/invoice_ninja.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/SelfhostedPro/selfhosted_templates
+- Stack File: Template/Stack/invoice-ninja.yml
 
 ## Categories
 

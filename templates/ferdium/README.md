@@ -4,9 +4,10 @@ Ferdium is a messaging browser that allows you to combine your favourite messagi
 
 ![Logo](https://github.com/ferdium/ferdium-server/raw/main/logo.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/ferdium.yml
 
 ## Categories
 

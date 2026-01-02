@@ -71,8 +71,28 @@ function convertPorts(ports) {
 // Helper function to generate docker-compose.yml content as YAML string
 function generateDockerCompose(template) {
   const serviceName = template.name || 'app';
-  let yaml = `version: '3.8'\n\nservices:\n  ${serviceName}:\n`;
-  yaml += `    image: ${template.image}\n`;
+  let yaml = '';
+
+  // Handle stack-based templates (type 3) differently
+  if (!template.image && template.repository) {
+    yaml += `# This template is based on an external compose file\n`;
+    yaml += `# Repository: ${template.repository.url}\n`;
+    if (template.repository.stackfile) {
+      yaml += `# Stack file: ${template.repository.stackfile}\n`;
+    }
+    yaml += `#\n`;
+    yaml += `# Please refer to the repository for the complete docker-compose configuration\n`;
+    yaml += `# Or manually create your compose configuration below\n\n`;
+    yaml += `version: '3.8'\n\n`;
+    yaml += `services:\n`;
+    yaml += `  ${serviceName}:\n`;
+    yaml += `    # Configure your service here\n`;
+    yaml += `    # image: your-image:tag\n`;
+    return yaml;
+  }
+
+  yaml = `version: '3.8'\n\nservices:\n  ${serviceName}:\n`;
+  yaml += `    image: ${template.image || 'IMAGE_NOT_SPECIFIED'}\n`;
   yaml += `    container_name: ${serviceName}\n`;
   yaml += `    restart: unless-stopped\n`;
 
@@ -126,13 +146,25 @@ function generateEnvExample(template) {
   let envContent = '# Environment variables for ' + (template.title || template.name) + '\n\n';
 
   template.env.forEach(e => {
-    if (e.label) {
+    if (e.label && e.label !== e.name) {
       envContent += `# ${e.label}\n`;
     }
     if (e.description) {
       envContent += `# ${e.description}\n`;
     }
-    envContent += `${e.name}=${e.default || ''}\n\n`;
+    // Provide sensible defaults for common variables
+    let defaultValue = e.default || '';
+    if (!defaultValue) {
+      if (e.name === 'TZ') defaultValue = 'UTC';
+      else if (e.name === 'PUID') defaultValue = '1000';
+      else if (e.name === 'PGID') defaultValue = '1000';
+      else if (e.name.includes('PASSWORD') || e.name.includes('SECRET')) {
+        defaultValue = 'changeme';
+      } else if (e.name.includes('URL') || e.name.includes('HOST')) {
+        defaultValue = 'http://localhost';
+      }
+    }
+    envContent += `${e.name}=${defaultValue}\n\n`;
   });
 
   return envContent;
@@ -147,8 +179,18 @@ function generateReadme(template) {
     readme += `![Logo](${template.logo})\n\n`;
   }
 
-  readme += `## Docker Image\n\n`;
-  readme += `\`${template.image}\`\n\n`;
+  // Add Docker Image or Repository info based on template type
+  if (template.image) {
+    readme += `## Docker Image\n\n`;
+    readme += `\`${template.image}\`\n\n`;
+  } else if (template.repository) {
+    readme += `## Source Repository\n\n`;
+    readme += `- Repository: ${template.repository.url}\n`;
+    if (template.repository.stackfile) {
+      readme += `- Stack File: ${template.repository.stackfile}\n`;
+    }
+    readme += `\n`;
+  }
 
   if (template.categories && template.categories.length > 0) {
     readme += `## Categories\n\n`;

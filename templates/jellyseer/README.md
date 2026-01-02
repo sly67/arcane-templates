@@ -4,9 +4,10 @@ Jellyseerr is a free and open source fork of Overseerr for managing requests for
 
 ![Logo](https://raw.githubusercontent.com/Fallenbagel/jellyseerr/develop/public/logo_full.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/jellyseer.yml
 
 ## Categories
 

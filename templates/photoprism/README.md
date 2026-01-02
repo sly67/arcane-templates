@@ -4,9 +4,10 @@ PhotoPrism is an AI-powered app for browsing, organizing & sharing your photo co
 
 ![Logo](https://photoprism.app/static/img/logo.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/photoprism.yml
 
 ## Categories
 

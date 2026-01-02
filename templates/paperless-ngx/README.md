@@ -4,9 +4,10 @@ Paperless-ngx is a document management system that transforms your physical docu
 
 ![Logo](https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/paperless.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/pi-hosted/pi-hosted/
+- Stack File: stack/paperless-ngx.yml
 
 ## Categories
 

@@ -4,9 +4,10 @@ Klaxon is a free, quick to set up and easy to use robot that checks websites reg
 
 ![Logo](https://mediadepot.github.io/templates/img/klaxon-logo.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/mediadepot/templates
+- Stack File: stacks/klaxon/docker-compose.yml
 
 ## Categories
 

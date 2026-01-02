@@ -4,9 +4,10 @@ The open-source secret management platform: Sync secrets/configs across your tea
 
 ![Logo](https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/infisical-black.webp)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/shmolf/portainer-templates
+- Stack File: stacks/infisical/compose.yml
 
 ## Categories
 

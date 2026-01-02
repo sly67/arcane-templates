@@ -4,9 +4,10 @@ Penpot is the first Open Source design and prototyping platform meant for cross-
 
 ![Logo](https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/penpot-logo.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/shmolf/portainer-templates
+- Stack File: stacks/penpot/docker-compose-http.yml
 
 ## Categories
 

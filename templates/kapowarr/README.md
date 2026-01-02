@@ -2,9 +2,10 @@
 
 Kapowarr is a software to build and manage a comic book library, fitting in the *arr suite of software.
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/kapowarr.yml
 
 ## Categories
 

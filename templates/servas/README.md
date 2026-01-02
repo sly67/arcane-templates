@@ -4,9 +4,10 @@ A self-hosted bookmark management tool.
 
 ![Logo](https://github.com/beromir/Servas/raw/main/docs/images/home.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/servas.yml
 
 ## Categories
 

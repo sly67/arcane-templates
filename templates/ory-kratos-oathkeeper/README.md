@@ -4,9 +4,10 @@ Ory Kratos with Oathkeeper (ORY Oathkeeper is an Identity & Access Proxy (IAP) a
 
 ![Logo](https://raw.githubusercontent.com/ory/meta/master/static/banners/oathkeeper.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/ory-kratos-oathkeeper.yml
 
 ## Categories
 

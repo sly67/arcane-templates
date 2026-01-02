@@ -1,14 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/Qballjos/portainer_templates
+# Stack file: Template/Stack/nextcloud.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   nextcloud:
-    image: undefined
-    container_name: nextcloud
-    restart: unless-stopped
-    environment:
-      PUID: 1000
-      PGID: 100
-      TZ: ${TZ}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      PORT: ${PORT}
+    # Configure your service here
+    # image: your-image:tag

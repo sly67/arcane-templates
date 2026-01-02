@@ -4,9 +4,10 @@ OpnForm is an open-source form builder. It's an alternative to products like Typ
 
 ![Logo](https://opnform.com/img/logo.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/opnform.yml
 
 ## Categories
 

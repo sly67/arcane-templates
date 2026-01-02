@@ -4,9 +4,10 @@ Hoarder is an open source 'Bookmark Everything' app that uses AI for automatical
 
 ![Logo](https://raw.githubusercontent.com/hoarder-app/hoarder/main/screenshots/logo.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/hoarder.yml
 
 ## Categories
 

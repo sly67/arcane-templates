@@ -4,9 +4,10 @@ Meilisearch is a **RESTful search API**. It aims to be a **ready-to-go solution*
 
 ![Logo](https://docs.meilisearch.com/logo.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/meilisearch.yml
 
 ## Categories
 

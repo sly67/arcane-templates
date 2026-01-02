@@ -4,9 +4,10 @@ Xwiki s a free wiki software platform written in Java with a design emphasis on 
 
 ![Logo](https://upload.wikimedia.org/wikipedia/commons/e/e2/Logo-xwikiorange.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/xwiki.yml
 
 ## Categories
 

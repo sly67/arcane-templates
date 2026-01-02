@@ -4,9 +4,10 @@ Medama Analytics is an open-source project dedicated to providing self-hostable,
 
 ![Logo](https://raw.githubusercontent.com/medama-io/medama/main/.github/images/banner-dark.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/medama.yml
 
 ## Categories
 

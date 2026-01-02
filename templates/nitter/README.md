@@ -4,9 +4,10 @@ A free and open source alternative Twitter front-end focused on privacy and perf
 
 ![Logo](https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/nitter.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/pi-hosted/pi-hosted/
+- Stack File: stack/nitter.yml
 
 ## Categories
 

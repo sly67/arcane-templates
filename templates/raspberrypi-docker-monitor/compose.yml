@@ -1,11 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/pi-hosted/pi-hosted
+# Stack file: stack/raspberrypi-monitoring.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   RaspberryPi-Docker-Monitor:
-    image: undefined
-    container_name: RaspberryPi-Docker-Monitor
-    restart: unless-stopped
-    ports:
-      - "3000:3000/tcp"
-    environment:
-      PROMETHEUS_RETENTION: 15d
+    # Configure your service here
+    # image: your-image:tag

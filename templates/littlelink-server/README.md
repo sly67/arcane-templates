@@ -4,9 +4,10 @@ LittleLink is an open source DIY self-hosted alternative to services like Linktr
 
 ![Logo](https://littlelink.io/images/avatar@2x.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/littlelink.yml
 
 ## Categories
 

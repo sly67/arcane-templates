@@ -4,9 +4,10 @@ Teleport allows engineers and security professionals to unify access for SSH ser
 
 ![Logo](https://bookface-images.s3.amazonaws.com/logos/386100350818400a035ac8e0caa84111de3316eb.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/teleport.yml
 
 ## Categories
 

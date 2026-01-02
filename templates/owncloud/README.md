@@ -4,9 +4,10 @@ ownCloud is a self-hosted file sync and share server. It provides access to your
 
 ![Logo](https://raw.githubusercontent.com/docker-library/docs/9d36b4ed7cabc35dbd3849272ba2bd7abe482172/owncloud/logo.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/Qballjos/portainer_templates
+- Stack File: Template/Stack/owncloud.yml
 
 ## Categories
 

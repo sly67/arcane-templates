@@ -4,9 +4,10 @@ Passbolt is a free and open source password manager designed for collaboration. 
 
 ![Logo](https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/passbolt.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/pi-hosted/pi-hosted
+- Stack File: stack/passbolt.yml
 
 ## Categories
 

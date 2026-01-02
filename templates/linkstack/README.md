@@ -4,9 +4,10 @@ Self-hosted open-source Linktree alternative. LinkStack is a highly customizable
 
 ![Logo](https://linkstack.org/wp-content/uploads/2023/04/logo-animated.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/linkstack.yml
 
 ## Categories
 

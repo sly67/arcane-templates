@@ -1,9 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/mycroftwilde/portainer_templates
+# Stack file: Template/Stack/stash.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   Stash:
-    image: undefined
-    container_name: Stash
-    restart: unless-stopped
-    environment:
-      PORT: ${PORT}
+    # Configure your service here
+    # image: your-image:tag

@@ -4,9 +4,10 @@ Monica is a great open source personal relationship management system to organiz
 
 ![Logo](https://raw.githubusercontent.com/docker-library/docs/b962028212dbd77c9531dbcf8d5a81db79d4a735/monica/logo.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/monica.yml
 
 ## Categories
 

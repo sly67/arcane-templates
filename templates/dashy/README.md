@@ -4,9 +4,10 @@ Helps you organize your self-hosted services by making them accessible from a si
 
 ![Logo](https://dashy.to/img/dashy.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/mycroftwilde/portainer_templates
+- Stack File: Template/Stack/dashy.yml
 
 ## Categories
 

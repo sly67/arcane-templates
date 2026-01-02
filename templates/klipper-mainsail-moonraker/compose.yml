@@ -1,9 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/pi-hosted/pi-hosted/
+# Stack file: stack/klipper.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   klipper-mainsail-moonraker:
-    image: undefined
-    container_name: klipper-mainsail-moonraker
-    restart: unless-stopped
-    environment:
-      3D_PRINTER_DEVICE: /dev/ttymxc3
+    # Configure your service here
+    # image: your-image:tag

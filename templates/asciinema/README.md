@@ -4,9 +4,10 @@ Self-hosted terminal recording and playback
 
 ![Logo](https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/asciinema.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/shmolf/portainer-templates
+- Stack File: stacks/asciinema/docker-compose.yml
 
 ## Categories
 

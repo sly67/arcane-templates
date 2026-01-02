@@ -4,9 +4,10 @@ High-performance cloud platform for industrial production management. Manubes is
 
 ![Logo](https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/inray-manubes.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/portainer/templates
+- Stack File: edge/inray-manubes-edge-node/docker-compose.yml
 
 ## Categories
 

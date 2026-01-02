@@ -4,9 +4,10 @@ BroadlinkManager is a Flask powerd, easy to use system that hepls you to work wi
 
 ![Logo](https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/broadlink.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/broadlink-manager.yml
 
 ## Categories
 

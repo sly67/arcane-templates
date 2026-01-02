@@ -2,9 +2,10 @@
 
 A lightweight server resource monitoring hub with historical data, docker stats, and alerts.
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/beszel.yml
 
 ## Categories
 

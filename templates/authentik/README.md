@@ -4,9 +4,10 @@ Authentik is an open-source Identity Provider focused on flexibility and versati
 
 ![Logo](https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Images/goauthentik.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/authentik.yml
 
 ## Categories
 

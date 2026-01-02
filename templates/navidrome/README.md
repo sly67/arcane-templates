@@ -4,9 +4,10 @@ Navidrome is an open source web-based music collection server and streamer. It g
 
 ![Logo](https://github.com/navidrome/navidrome/raw/master/resources/logo-192x192.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/navidrome.yml
 
 ## Categories
 

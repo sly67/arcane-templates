@@ -4,9 +4,10 @@ InfluxDB is an open source time series database for recording metrics, events, a
 
 ![Logo](https://www.niagaramarketplace.com/media/catalog/product/cache/f7420c7cfd302c73440e50c5a6066c3c/m/a/marketplace_icons_13_.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/influxdb2.yml
 
 ## Categories
 

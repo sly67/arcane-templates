@@ -4,9 +4,10 @@ The recipe manager that allows you to manage your ever growing collection of dig
 
 ![Logo](https://docs.tandoor.dev/logo_color.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/tandoor.yml
 
 ## Categories
 

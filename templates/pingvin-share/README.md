@@ -4,9 +4,10 @@ Pingvin Share is self-hosted file sharing platform and an alternative for WeTran
 
 ![Logo](https://user-images.githubusercontent.com/58886915/166198400-c2134044-1198-4647-a8b6-da9c4a204c68.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/pingvin.yml
 
 ## Categories
 

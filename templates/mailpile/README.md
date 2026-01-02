@@ -4,9 +4,10 @@ Mailpile is an e-mail client!/search engine and a personal webmail server/easy w
 
 ![Logo](https://www.mailpile.is/img/icon-512x512.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/mailpile.yml
 
 ## Categories
 

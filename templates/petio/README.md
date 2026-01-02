@@ -4,9 +4,10 @@ Petio is a third party companion app available to Plex server owners to allow th
 
 ![Logo](https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/petio-icon.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/Qballjos/portainer_templates
+- Stack File: Template/Stack/petio.yml
 
 ## Categories
 

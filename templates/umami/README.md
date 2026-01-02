@@ -4,9 +4,10 @@ Umami is a simple, easy to use, self-hosted web analytics solution. The goal is 
 
 ![Logo](https://icons.duckduckgo.com/ip3/umami.is.ico)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/umami.yml
 
 ## Categories
 

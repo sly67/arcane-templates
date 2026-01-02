@@ -4,9 +4,10 @@ A complete and local NVR designed for Home Assistant with AI object detection. U
 
 ![Logo](https://raw.githubusercontent.com/blakeblackshear/frigate/master/docs/static/img/frigate.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/frigatenvr.yml
 
 ## Categories
 

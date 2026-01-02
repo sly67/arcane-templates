@@ -4,9 +4,10 @@ Self hosted FLOSS fitness/workout, nutrition and weight tracker written with Dja
 
 ![Logo](https://raw.githubusercontent.com/wger-project/wger/master/wger/core/static/images/logos/logo.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/wger.yml
 
 ## Categories
 

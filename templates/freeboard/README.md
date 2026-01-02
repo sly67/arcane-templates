@@ -4,9 +4,10 @@ Freeboard is a turn-key HTML-based 'engine' for dashboards. Besides a nice looki
 
 ![Logo](https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/freeboard.jpg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/freeboard.yml
 
 ## Categories
 

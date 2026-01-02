@@ -1,7 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/xneo1/portainer_templates
+# Stack file: Template/Stack/lazytainer.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   lazytainer:
-    image: undefined
-    container_name: lazytainer
-    restart: unless-stopped
+    # Configure your service here
+    # image: your-image:tag

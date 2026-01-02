@@ -4,9 +4,10 @@ Appsmith (www.appsmith.com) is the first open-source low-code tool that helps de
 
 ![Logo](https://cdn-images.himalayas.app/vr60veq4neiptamhqm6qxwi3toi3)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/appsmith.yml
 
 ## Categories
 

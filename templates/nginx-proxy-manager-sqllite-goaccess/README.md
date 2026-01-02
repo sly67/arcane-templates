@@ -4,9 +4,10 @@ Nginx Proxy Manager v2 with sqlite and Goaccess Charts enables you to easily for
 
 ![Logo](https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/proxy_mgr.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/pi-hosted/pi-hosted
+- Stack File: stack/nginx-proxy-manager-sqlite-goaccess.yml
 
 ## Categories
 

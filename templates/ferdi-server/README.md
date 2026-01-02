@@ -4,9 +4,10 @@ Ferdi is a messaging browser that allows you to combine your favourite messaging
 
 ![Logo](https://raw.githubusercontent.com/getferdi/server/master/logo.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/ferdiserver.yml
 
 ## Categories
 

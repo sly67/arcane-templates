@@ -4,9 +4,10 @@ A social platform to enjoy and share music.Funkwhale is a community-driven proje
 
 ![Logo](https://funkwhale.audio/img/with-text-500.4aff7861.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/funkwhale.yml
 
 ## Categories
 

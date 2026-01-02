@@ -2,9 +2,10 @@
 
 A lightweight RSS feed aggregator and reader.
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/fusion.yml
 
 ## Categories
 

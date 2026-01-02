@@ -4,9 +4,10 @@ Dashdot is a modern server dashboard, running on the latest tech, designed with 
 
 ![Logo](https://getdashdot.com/img/logo512.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/dashdot.yml
 
 ## Categories
 

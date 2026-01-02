@@ -2,9 +2,10 @@
 
 Documize Community is an open source, modern, self-hosted, enterprise-grade knowledge management solution.
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/documize.yml
 
 ## Categories
 

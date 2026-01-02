@@ -4,9 +4,10 @@ InfluxDB is an open source time series database for recording metrics, events, a
 
 ![Logo](https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/influxdb_telegraf.jpg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/influxdb2_telegraf.yml
 
 ## Categories
 

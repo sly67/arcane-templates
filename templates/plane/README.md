@@ -4,9 +4,10 @@ Project management tool from the future. An open-source software development too
 
 ![Logo](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-assets/logo/text-logo.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/plane.yml
 
 ## Categories
 

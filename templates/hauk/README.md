@@ -4,9 +4,10 @@ Hauk is a fully open source, self-hosted location sharing service. Install the b
 
 ![Logo](https://github.com/bilde2910/Hauk/raw/master/frontend/assets/logo.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/hauk.yml
 
 ## Categories
 

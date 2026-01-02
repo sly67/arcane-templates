@@ -4,9 +4,10 @@ Monitor your Raspberry Pi and Dockers using Grafana developed by oijkn. Please d
 
 ![Logo](https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/rpi_monitor.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/pi-hosted/pi-hosted
+- Stack File: stack/raspberrypi-monitoring.yml
 
 ## Categories
 

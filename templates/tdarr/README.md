@@ -4,9 +4,10 @@ Tdarr is a popular conditional transcoding application for processing large (or 
 
 ![Logo](https://tdarr.io/static/media/logo3.02a3f4a3.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/tdarr.yml
 
 ## Categories
 

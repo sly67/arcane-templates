@@ -2,9 +2,10 @@
 
 Miniflux is a minimalist and opinionated feed reader.
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/miniflux.yml
 
 ## Categories
 

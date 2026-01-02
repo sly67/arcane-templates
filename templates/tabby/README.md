@@ -4,9 +4,10 @@ Tabby is an infinitely customizable cross-platform terminal app for local shells
 
 ![Logo](https://tabby.sh/32bf32ff6c87e8d18932.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/tabby.yml
 
 ## Categories
 

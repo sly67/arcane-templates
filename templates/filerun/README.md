@@ -4,9 +4,10 @@ access your files anywhere through self-hosted secure cloud storage, file backup
 
 ![Logo](https://mediadepot.github.io/templates/img/filerun-logo.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/mediadepot/templates
+- Stack File: stacks/filerun/docker-compose.yml
 
 ## Categories
 

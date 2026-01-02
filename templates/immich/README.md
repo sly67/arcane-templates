@@ -4,9 +4,10 @@ Self-hosted backup solution for photos and videos on mobile device.
 
 ![Logo](https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/immich-logo.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/shmolf/portainer-templates
+- Stack File: stacks/immich/docker-compose.yml
 
 ## Categories
 

@@ -4,9 +4,10 @@ Baïkal is a lightweight CalDAV+CardDAV server. It offers an extensive web inter
 
 ![Logo](https://sabre.io/img/logo.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/baikal.yml
 
 ## Categories
 

@@ -2,9 +2,10 @@
 
 Jump is yet another self-hosted startpage for your server designed to be simple, stylish, fast and secure.
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/jump.yml
 
 ## Categories
 

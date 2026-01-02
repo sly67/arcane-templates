@@ -1,11 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/xneo1/portainer_templates
+# Stack file: Template/Stack/koillection.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   Koillection:
-    image: undefined
-    container_name: Koillection
-    restart: unless-stopped
-    environment:
-      PUID: 1000
-      PGID: 1000
-      PORT: ${PORT}
+    # Configure your service here
+    # image: your-image:tag

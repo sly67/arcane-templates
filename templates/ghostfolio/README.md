@@ -4,9 +4,10 @@ Ghostfolio is an open source wealth management software built with web technolog
 
 ![Logo](https://avatars.githubusercontent.com/u/82473144?s=200)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/ghostfolio.yml
 
 ## Categories
 

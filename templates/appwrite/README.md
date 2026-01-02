@@ -4,9 +4,10 @@ Appwrite is a self-hosted backend-as-a-service platform that provides developers
 
 ![Logo](https://appwrite.io/images/appwrite.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/appwrite.yml
 
 ## Categories
 

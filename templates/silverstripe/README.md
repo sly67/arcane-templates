@@ -4,9 +4,10 @@ Silverstripe CMS is a free and open source Content Management System (CMS) and F
 
 ![Logo](https://github.com/brettt89/silverstripe-docker/raw/master/docs/logo.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/silverstripe.yml
 
 ## Categories
 

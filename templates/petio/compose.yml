@@ -1,12 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/Qballjos/portainer_templates
+# Stack file: Template/Stack/petio.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   Petio:
-    image: undefined
-    container_name: Petio
-    restart: unless-stopped
-    environment:
-      PUID: 1000
-      PGID: 100
-      TZ: ${TZ}
-      PORT: ${PORT}
+    # Configure your service here
+    # image: your-image:tag

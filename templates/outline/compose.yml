@@ -1,44 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/lissy93/portainer-templates
+# Stack file: sources/stacks/outline.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   outline:
-    image: undefined
-    container_name: outline
-    restart: unless-stopped
-    environment:
-      NODE_ENV: production
-      SECRET_KEY: ${SECRET_KEY}
-      UTILS_SECRET: ${UTILS_SECRET}
-      DATABASE_URL: ${DATABASE_URL}
-      DATABASE_URL_TEST: ${DATABASE_URL_TEST}
-      DATABASE_CONNECTION_POOL_MIN: ${DATABASE_CONNECTION_POOL_MIN}
-      DATABASE_CONNECTION_POOL_MAX: ${DATABASE_CONNECTION_POOL_MAX}
-      REDIS_URL: ${REDIS_URL}
-      URL: ${URL}
-      PORT: 3000
-      COLLABORATION_URL: ${COLLABORATION_URL}
-      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
-      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
-      SSL_KEY: ${SSL_KEY}
-      SSL_CERT: ${SSL_CERT}
-      FORCE_HTTPS: true
-      ENABLE_UPDATES: true
-      WEB_CONCURRENCY: 1
-      MAXIMUM_IMPORT_SIZE: 5120000
-      DEBUG: http
-      LOG_LEVEL: info
-      GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
-      SENTRY_DSN: ${SENTRY_DSN}
-      SENTRY_TUNNEL: ${SENTRY_TUNNEL}
-      SMTP_HOST: ${SMTP_HOST}
-      SMTP_PORT: ${SMTP_PORT}
-      SMTP_USERNAME: ${SMTP_USERNAME}
-      SMTP_PASSWORD: ${SMTP_PASSWORD}
-      SMTP_FROM_EMAIL: ${SMTP_FROM_EMAIL}
-      SMTP_REPLY_EMAIL: ${SMTP_REPLY_EMAIL}
-      SMTP_TLS_CIPHERS: ${SMTP_TLS_CIPHERS}
-      SMTP_SECURE: true
-      DEFAULT_LANGUAGE: en_US
-      RATE_LIMITER_ENABLED: true
-      RATE_LIMITER_REQUESTS: 1000
-      RATE_LIMITER_DURATION_WINDOW: 60
+    # Configure your service here
+    # image: your-image:tag

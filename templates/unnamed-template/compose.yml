@@ -1,10 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/portainer/templates
+# Stack file: edge/inray-manubes-edge-node/docker-compose.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   app:
-    image: undefined
-    container_name: app
-    restart: unless-stopped
-    environment:
-      MANUBES_SECRET: ${MANUBES_SECRET}
-      ACCEPT_EULA: ${ACCEPT_EULA}
+    # Configure your service here
+    # image: your-image:tag

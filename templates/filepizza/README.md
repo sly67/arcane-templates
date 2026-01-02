@@ -4,9 +4,10 @@ Peer-to-peer file transfers in your browser
 
 ![Logo](https://raw.githubusercontent.com/kern/filepizza/master/src/static/images/wordmark.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/filepizza.yml
 
 ## Categories
 

@@ -4,9 +4,10 @@ Fast VPN Server with easy to use User Interface
 
 ![Logo](https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/wireguard.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/pi-hosted/pi-hosted
+- Stack File: stack/wireguard-easy.yml
 
 ## Categories
 

@@ -4,9 +4,10 @@ Budibase allows no-code users to build apps quickly, with more functionality ava
 
 ![Logo](https://files.readme.io/593b386-budibase-logo-website.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/budibase.yml
 
 ## Categories
 

@@ -4,9 +4,10 @@ Serverless functions made simple
 
 ![Logo](https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/openfaas.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/openfaas/faas
+- Stack File: docker-compose.yml
 
 ## Categories
 

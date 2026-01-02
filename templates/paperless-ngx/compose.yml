@@ -1,16 +1,13 @@
+# This template is based on an external compose file
+# Repository: https://github.com/pi-hosted/pi-hosted/
+# Stack file: stack/paperless-ngx.yml
+#
+# Please refer to the repository for the complete docker-compose configuration
+# Or manually create your compose configuration below
+
 version: '3.8'
 
 services:
   paperless-ngx:
-    image: undefined
-    container_name: paperless-ngx
-    restart: unless-stopped
-    environment:
-      PUID: 1000
-      PGID: 1000
-      TZ: America/New_York
-      PAPERLESSURL: ${PAPERLESSURL}
-      ADMIN_USER: ${ADMIN_USER}
-      ADMIN_PASS: ${ADMIN_PASS}
-      RANDOMKEY: ${RANDOMKEY}
-      LANG: eng
+    # Configure your service here
+    # image: your-image:tag

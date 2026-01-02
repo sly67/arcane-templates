@@ -4,9 +4,10 @@ Google Analytics alternative that protects your data and your customers' privacy
 
 ![Logo](https://gallery.ncnet.nl/upload/2020/05/22/20200522171613-9205fa32.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/matomo.yml
 
 ## Categories
 

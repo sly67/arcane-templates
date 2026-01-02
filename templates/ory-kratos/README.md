@@ -4,9 +4,10 @@ Ory Kratos with Oathkeeper is _the_ developer-friendly, security-hardened and ba
 
 ![Logo](https://raw.githubusercontent.com/ory/meta/master/static/banners/kratos.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/ory-kratos-standalone.yml
 
 ## Categories
 

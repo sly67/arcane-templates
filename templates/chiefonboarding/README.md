@@ -4,9 +4,10 @@ ChiefOnboarding is a free and open source employee onboarding platform. You can 
 
 ![Logo](https://chiefonboarding.com/wp-content/uploads/2022/07/ChiefOnBoarding-768x138.png)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/chiefonboarding.yml
 
 ## Categories
 

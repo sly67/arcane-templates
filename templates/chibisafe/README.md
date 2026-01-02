@@ -4,9 +4,10 @@ Chibisafe is a modern and self-hosted take on file uploading services that can h
 
 ![Logo](https://chibisafe.moe/logo.svg)
 
-## Docker Image
+## Source Repository
 
-`undefined`
+- Repository: https://github.com/xneo1/portainer_templates
+- Stack File: Template/Stack/chibisafe.yml
 
 ## Categories
 
