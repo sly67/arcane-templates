@@ -1,13 +1,27 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/tandoor.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  tandoor:
-    # Configure your service here
-    # image: your-image:tag
+  db_recipes:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  
+  recipes:
+    image: vabene1111/recipes
+    container_name: tandoor
+    ports:
+      - 82:8080
+    volumes:
+      - /portainer/Files/AppData/Config/tandoor/staticfiles:/opt/recipes/staticfiles
+      - /portainer/Files/AppData/Config/tandoor/mediafiles:/opt/recipes/mediafiles
+    environment:
+      - SECRET_KEY=YOUR_SECRET_KEY
+      - DB_ENGINE=django.db.backends.postgresql
+      - POSTGRES_HOST=db_recipes
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    restart: unless-stopped
+    depends_on:
+      - db_recipes

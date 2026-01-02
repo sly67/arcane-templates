@@ -1,13 +1,12 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/hauk.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   hauk:
-    # Configure your service here
-    # image: your-image:tag
+    image: bilde2910/hauk:latest
+    container_name: Hauk
+    hostname: hauk
+    healthcheck:
+      test: curl -f http://localhost:80/ || exit 1
+    ports:
+      - 7735:80
+    volumes:
+      - /portainer/Files/AppData/Config/hauk:/etc/hauk:rw
+    restart: on-failure

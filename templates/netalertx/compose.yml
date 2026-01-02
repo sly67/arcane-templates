@@ -1,13 +1,14 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/netalertx.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  NetAlertX:
-    # Configure your service here
-    # image: your-image:tag
+  netalertx:
+    container_name: netalertx
+    # use the below line if you want to test the latest dev image
+    # image: "jokobsk/netalertx-dev:latest" 
+    image: "jokobsk/netalertx:latest"      
+    network_mode: "host"        
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/netalertx/config:/app/config 
+      - /portainer/Files/AppData/Config/netalertx/db:/app/db  
+    environment:
+      - TZ=Europe/Athens      
+      - PORT=20211

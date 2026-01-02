@@ -1,13 +1,11 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/gathio.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  gathio:
-    # Configure your service here
-    # image: your-image:tag
+    gathio:
+        build: .
+        links:
+            - mongo
+        ports:
+            - 3022:3000
+    mongo:
+        image: mongo:latest
+        volumes:
+             - /portainer/Files/AppData/Config/gathio/mongodb_data_db:/data/db

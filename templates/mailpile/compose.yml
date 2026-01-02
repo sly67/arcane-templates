@@ -1,13 +1,9 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/mailpile.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   mailpile:
-    # Configure your service here
-    # image: your-image:tag
+    container_name: mailpile
+    image: rroemhild/mailpile
+    volumes:
+      - /portainer/Files/AppData/Config/mailpile:/root/.local/share/Mailpile
+      - /portainer/Files/AppData/Config/mailpile/gnu:/root/.gnupg
+    ports:
+      - '33411:33411'

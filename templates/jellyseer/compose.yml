@@ -1,13 +1,12 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/jellyseer.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  jellyseer:
-    # Configure your service here
-    # image: your-image:tag
+    jellyseerr:
+       image: fallenbagel/jellyseerr:latest
+       container_name: jellyseerr
+       environment:
+            - LOG_LEVEL=INFO
+            - TZ=Europe/Athens
+       ports:
+            - 5055:5055
+       volumes:
+            - /portainer/Files/AppData/Config/jellyseer:/app/config
+       restart: unless-stopped

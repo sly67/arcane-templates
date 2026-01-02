@@ -1,13 +1,12 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/hasty-paste.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  hasty-paste:
-    # Configure your service here
-    # image: your-image:tag
+  paste-bin:
+    container_name: hasty-paste
+    image: ghcr.io/enchant97/hasty-paste:latest
+    restart: unless-stopped
+    volumes:
+      - portainer/Files/AppData/Config/hasty-paste:/app/data
+    ports:
+      - 98000:8000
+
+volumes:
+  data:

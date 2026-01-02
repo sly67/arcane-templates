@@ -1,13 +1,24 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/umami.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   umami:
-    # Configure your service here
-    # image: your-image:tag
+    image: ghcr.io/umami-software/umami:postgresql-latest
+    ports:
+      - "3003:3000"
+    environment:
+      DATABASE_URL: postgresql://umami:umami@db:5432/umami
+      DATABASE_TYPE: postgresql
+      HASH_SALT: replace-me-with-a-random-string
+    depends_on:
+      - db
+    restart: always
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: umami
+      POSTGRES_USER: umami
+      POSTGRES_PASSWORD: umami
+    volumes:
+      - /portainer/Files/AppData/Config/umami:/docker-entrypoint-initdb.d/schema.postgresql.sql:ro
+      - umami-db-data:/var/lib/postgresql/data
+    restart: always
+volumes:
+  umami-db-data:

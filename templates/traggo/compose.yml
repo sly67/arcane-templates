@@ -1,13 +1,10 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/traggo.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   traggo:
-    # Configure your service here
-    # image: your-image:tag
+    image: traggo/server:latest
+    ports:
+      - 3030:3030
+    environment:
+      TRAGGO_DEFAULT_USER_NAME: "admin"
+      TRAGGO_DEFAULT_USER_PASS: "mynewpassword"
+    volumes:
+      - /portainer/Files/AppData/Config/traggo/data:/opt/traggo/data

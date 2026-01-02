@@ -1,13 +1,20 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/excalidraw.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   excalidraw:
-    # Configure your service here
-    # image: your-image:tag
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    container_name: excalidraw
+    ports:
+      - "3111:80"
+    restart: on-failure
+    stdin_open: true
+    healthcheck:
+      disable: true
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - /portainer/Files/AppData/Config/excalidraw/:/opt/node_app/app:delegated
+      - /portainer/Files/AppData/Config/excalidraw/package.json:/opt/node_app/package.json
+      - /portainer/Files/AppData/Config/excalidraw/yarn.lock:/opt/node_app/yarn.lock
+      - /portainer/Files/AppData/Config/excalidraw/notused:/opt/node_app/app/node_modules

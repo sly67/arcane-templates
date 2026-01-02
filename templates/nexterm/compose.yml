@@ -1,13 +1,10 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/nexterm.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   nexterm:
-    # Configure your service here
-    # image: your-image:tag
+    ports:
+      - "6989:6989"
+    restart: always
+    volumes:
+      - /portainer/Files/AppData/Config/nexterm:/app/data
+    image: germannewsmaker/nexterm:1.0.2-OPEN-PREVIEW
+volumes:
+  nexterm:

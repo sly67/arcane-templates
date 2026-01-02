@@ -1,13 +1,19 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/filestash.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   filestash:
-    # Configure your service here
-    # image: your-image:tag
+    container_name: filestash
+    image: machines/filestash
+    restart: always
+    environment:
+    - APPLICATION_URL=
+    - GDRIVE_CLIENT_ID=<gdrive_client>
+    - GDRIVE_CLIENT_SECRET=<gdrive_secret>
+    - DROPBOX_CLIENT_ID=<dropbox_key>
+    - ONLYOFFICE_URL=http://onlyoffice
+    ports:
+    - "8334:8334"
+  onlyoffice:
+    container_name: filestash_oods
+    image: onlyoffice/documentserver
+    restart: always
+    security_opt:
+      - seccomp:unconfined

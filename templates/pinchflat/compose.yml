@@ -1,13 +1,12 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/pinchflat.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
+version: '3'
 services:
   pinchflat:
-    # Configure your service here
-    # image: your-image:tag
+    image: ghcr.io/kieraneglin/pinchflat:latest
+    environment:
+      # Set the timezone to your local timezone
+      - TZ=Europe/Athens
+    ports:
+      - '8945:8945'
+    volumes:
+      - /portainer/Files/AppData/Config/pinchflat:/config
+      - /portainer/Files/AppData/Config/pinchflat/downloads:/downloads

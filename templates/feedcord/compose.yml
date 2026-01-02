@@ -1,13 +1,7 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/feedcord.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  feedcord:
-    # Configure your service here
-    # image: your-image:tag
+  myfeedcord:
+    image: qolors/feedcord:latest
+    container_name: FeedCord
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/feedcord/appsettings.json:/app/config/appsettings.json

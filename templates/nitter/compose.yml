@@ -1,13 +1,30 @@
-# This template is based on an external compose file
-# Repository: https://github.com/pi-hosted/pi-hosted/
-# Stack file: stack/nitter.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
+version: "3"
 
 services:
+
   nitter:
-    # Configure your service here
-    # image: your-image:tag
+    image: quay.io/unixfox/nitter:latest
+    container_name: nitter
+    networks:
+      - nitter_network
+    restart: unless-stopped
+    depends_on:
+      - redis
+    volumes:
+      - /portainer/Files/AppData/Config/nitter/data:/data
+    ports:
+      - 3300:8080
+    environment:
+      - REDIS_HOST="redis"
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    networks:
+      - nitter_network
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/nitter/redis:/data
+
+networks:
+  nitter_network:

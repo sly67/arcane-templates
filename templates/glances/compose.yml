@@ -1,13 +1,9 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/glances.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  glances:
-    # Configure your service here
-    # image: your-image:tag
+  glances-monitoring:
+    image: nicolargo/glances:latest-alpine
+    restart: always
+    pid: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - "GLANCES_OPT=-w"

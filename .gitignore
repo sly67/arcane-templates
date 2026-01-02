@@ -9,3 +9,8 @@ find-alternatives.js
 incomplete-templates.json
 fix-incomplete.log
 portainer_registery*.json
+portainer_registery extra 1.json
+portainer_registery extra 2.json
+portainer_registery extra 3.json
+*.sh
+*.claude

@@ -1,13 +1,28 @@
-# This template is based on an external compose file
-# Repository: https://github.com/Qballjos/portainer_templates
-# Stack file: Template/Stack/petio.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
+---
+version: "2"
 services:
-  Petio:
-    # Configure your service here
-    # image: your-image:tag
+  petio:
+    image: hotio/petio
+    container_name: petio
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /portainer/Files/AppData/Config/petio/Config:/config
+    ports:
+      - ${PORT}:7777
+    restart: unless-stopped
+    depends_on:
+      - mongo_db
+  mongo_db:
+    image: mongo
+    container_name: mongo_db
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${Timezone}
+    volumes:
+      - /portainer/AppData/Config/mongo_db/config:/data/configdb
+      - /portainer/AppData/Config/mongo_db/DB:/data/db
+    restart: unless-stopped

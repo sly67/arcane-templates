@@ -1,13 +1,10 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/dokemon.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   dokemon:
-    # Configure your service here
-    # image: your-image:tag
+    image: productiveops/dokemon:latest
+    container_name: dokemon
+    restart: unless-stopped
+    ports:
+      - 9090:9090
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /portainer/Files/AppData/Config/dokemon/data:/data

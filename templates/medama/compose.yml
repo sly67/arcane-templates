@@ -1,13 +1,9 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/medama.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  medama:
-    # Configure your service here
-    # image: your-image:tag
+    medama:
+        image: ghcr.io/medama-io/medama:latest
+        ports:
+            - "8010:8080"
+        volumes:
+            - /portainer/Files/AppData/Config/medama:/app/data
+volumes:
+    medama-data:

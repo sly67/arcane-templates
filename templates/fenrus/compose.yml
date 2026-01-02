@@ -1,13 +1,12 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/fenrus.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  Fenrus:
-    # Configure your service here
-    # image: your-image:tag
+  fenrus:
+    image: revenz/fenrus
+    container_name: fenrus
+    environment:
+      - TZ=Europe/Athens
+    volumes:
+      - /portainer/Files/AppData/Config/fenrus/data:/app/data
+      - /portainer/Files/AppData/Config/fenrus/images:/app/wwwroot/images
+    ports:
+      - 3003:3000
+    restart: unless-stopped

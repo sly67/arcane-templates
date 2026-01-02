@@ -1,13 +1,18 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/markopolis.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   markopolis:
-    # Configure your service here
-    # image: your-image:tag
+    image: ghcr.io/rishikanthc/markopolis:2.0.0
+    ports:
+      - "81080:80"
+    environment:
+      - MARKOPOLIS_DOMAIN=""
+      - MARKOPOLIS_FRONTEND_URL = ""
+      - MARKOPOLIS_TITLE="Awesome Notes"
+      - MARKOPOLIS_MD_PATH=/app/markdown
+      - MARKOPOLIS_API_KEY=<really long random alpha-numeric string>
+    volumes:
+      - /portainer/Files/AppData/Config/markopolis:/app/markdown
+    restart: unless-stopped
+
+volumes:
+  markopolis_data:
+    driver: local

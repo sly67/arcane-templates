@@ -1,13 +1,10 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/iperf.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  iperf:
-    # Configure your service here
-    # image: your-image:tag
+  iperf3:
+    restart: unless-stopped
+    container_name: iperf3-server
+    ports:
+      - '5201:5201'
+    image: networkstatic/iperf3
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    command: -s

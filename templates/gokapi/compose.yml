@@ -1,13 +1,10 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/gokapi.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   gokapi:
-    # Configure your service here
-    # image: your-image:tag
+    container_name: Gokapi
+    image: f0rc3/gokapi:latest
+    ports:
+      - 53842:53842
+    volumes:
+      - /portainer/Files/AppData/Config/gokapi/data:/app/data
+      - /portainer/Files/AppData/Config/gokapi/config:/app/config
+    restart: on-failure:5

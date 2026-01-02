@@ -1,13 +1,9 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/broadlink-manager.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  broadlink-manager:
-    # Configure your service here
-    # image: your-image:tag
+  broadlinkmanager:
+    image: techblog/broadlinkmanager
+    network_mode: host
+    container_name: broadlinkmanager
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/broadlinkmanager:/opt/broadlinkmanager/data
+

@@ -1,16 +1,11 @@
-version: '3.8'
-
 services:
   stirling-pdf:
-    image: frooodle/s-pdf:0.18.1
-    container_name: stirling-pdf
-    restart: unless-stopped
+    image: frooodle/s-pdf:latest
     ports:
-      - "5417:8080/tcp"
+      - 8180:8080
     volumes:
-      - /portainer/Files/AppData/Config/StirlingPDF:/configs
-      - /portainer/Files/AppData/Libraries/StirlingPDF/tessdata:/usr/share/tesseract-ocr/5/tessdata
+      - /portainer/Files/AppData/Config/tesseract-training-data:/usr/share/tesseract-ocr/4.00/tessdata #Required for extra OCR languages
+      - /portainer/Files/AppData/Config/stirling-pdf:/configs
+    #  - /location/of/customFiles:/customFiles/
     environment:
-      PUID: 1000
-      PGID: 1000
-      DOCKER_ENABLE_SECURITY: ${DOCKER_ENABLE_SECURITY}
+      - DOCKER_ENABLE_SECURITY=false

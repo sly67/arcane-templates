@@ -1,13 +1,25 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/silverstripe.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   silverstripe:
-    # Configure your service here
-    # image: your-image:tag
+    image: brettt89/silverstripe-web:8.1-apache
+    volumes:
+       - /portainer/Files/AppData/Config/silverstripe:/var/www/html
+    depends_on:
+       - silverstripe-db
+    environment:
+       - DOCUMENT_ROOT=/var/www/html/public
+       - SS_TRUSTED_PROXY_IPS=*
+       - SS_ENVIRONMENT_TYPE=dev
+       - SS_DATABASE_SERVER=database
+       - SS_DATABASE_NAME=SS_mysite
+       - SS_DATABASE_USERNAME=root
+       - SS_DATABASE_PASSWORD=
+       - SS_DEFAULT_ADMIN_USERNAME=admin
+       - SS_DEFAULT_ADMIN_PASSWORD=password
+  silverstripe-db:
+    image: mysql:5.7
+    environment:
+       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+       - /portainer/Files/AppData/Config/silverstripe/db-data:/var/lib/mysql
+volumes:
+     db-data:

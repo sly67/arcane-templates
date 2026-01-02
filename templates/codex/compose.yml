@@ -1,13 +1,10 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/codex.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
   codex:
-    # Configure your service here
-    # image: your-image:tag
+      image: docker.io/ajslater/codex
+      container_name: codex
+      volumes:
+          - /portainer/Files/AppData/Config/codex:/config
+          - /portainer/comics:/comics:ro
+      ports:
+          - 9810:9810
+      restart: on-failure

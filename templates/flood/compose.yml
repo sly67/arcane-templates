@@ -1,13 +1,16 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/flood.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  flood:
-    # Configure your service here
-    # image: your-image:tag
+  qflood:
+    container_name: qflood
+    image: hotio/qflood
+    restart: always
+    ports:
+      - "8282:8080"
+      - "3223:3000"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=Europe/Athens
+      - FLOOD_AUTH=false
+    volumes:
+      - /portainer/Files/AppData/Config/flood:/config

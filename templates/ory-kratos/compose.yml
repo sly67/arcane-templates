@@ -1,13 +1,8 @@
-# This template is based on an external compose file
-# Repository: https://github.com/xneo1/portainer_templates
-# Stack file: Template/Stack/ory-kratos-standalone.yml
-#
-# Please refer to the repository for the complete docker-compose configuration
-# Or manually create your compose configuration below
-
-version: '3.8'
-
 services:
-  Ory Kratos:
-    # Configure your service here
-    # image: your-image:tag
+  kratos-selfservice-ui-node:
+    ports:
+      - "4455:4455"
+    environment:
+      - PORT=4455
+      - SECURITY_MODE=
+      - KRATOS_BROWSER_URL=http://127.0.0.1:4433/
