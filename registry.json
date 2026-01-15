@@ -7447,6 +7447,25 @@
         "other",
         "tools"
       ]
+    },
+    {
+      "id": "ente-photos",
+      "name": "Ente Photos",
+      "description": "A fully open-source, end-to-end encrypted alternative to Google Photos. Ente provides secure photo and video storage with automatic backups, organized albums, and seamless synchronization across all your devices.",
+      "version": "1.0.0",
+      "author": "Arcane Template",
+      "compose_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/ente-photos/compose.yml",
+      "env_url": "https://raw.githubusercontent.com/sly67/arcane-templates/main/templates/ente-photos/.env.example",
+      "documentation_url": "https://github.com/sly67/arcane-templates/tree/main/templates/ente-photos",
+      "tags": [
+        "photos",
+        "storage",
+        "backup",
+        "selfhosted",
+        "privacy",
+        "encryption",
+        "media"
+      ]
     }
   ]
 }
